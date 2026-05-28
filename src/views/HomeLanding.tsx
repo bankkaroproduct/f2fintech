@@ -1,5 +1,5 @@
 "use client";
-import { Search, Star, CreditCard, Users, TrendingUp, ArrowUpRight } from "lucide-react";
+import { Search, Star, CreditCard, Users, TrendingUp, ArrowUpRight, Sparkles } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import Navigation from "@/components/Navigation";
@@ -126,8 +126,7 @@ function CardTile({ card }: { card: CardItem }) {
   return (
     <div className="lp-card overflow-hidden flex flex-col group">
       {/* Image */}
-      <div className="h-48 bg-gradient-to-br from-pink-50 via-white to-pink-50 flex items-center justify-center overflow-hidden relative">
-        <div className="absolute inset-0 bg-gradient-to-tr from-pink-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="h-32 sm:h-44 bg-gradient-to-br from-pink-50 via-white to-pink-50 flex items-center justify-center overflow-hidden relative">
         <img
           src={card.image}
           alt={card.name}
@@ -138,19 +137,19 @@ function CardTile({ card }: { card: CardItem }) {
       </div>
 
       {/* Content */}
-      <div className="px-5 pt-4 pb-5 flex flex-col flex-1">
+      <div className="px-3 sm:px-5 pt-3 sm:pt-4 pb-3 sm:pb-5 flex flex-col flex-1">
         {/* Network badges */}
         {networkList.length > 0 && (
-          <div className="flex flex-wrap gap-1.5 mb-3">
-            {networkList.map((n) => (
-              <span key={n} className="text-[10px] font-medium border border-slate-200 rounded-full px-2.5 py-1 text-slate-500 bg-slate-50">
+          <div className="flex flex-wrap gap-1 sm:gap-1.5 mb-2 sm:mb-3">
+            {networkList.slice(0, 2).map((n) => (
+              <span key={n} className="text-[9px] sm:text-[10px] font-medium border border-slate-200 rounded-full px-1.5 sm:px-2.5 py-0.5 sm:py-1 text-slate-500 bg-slate-50">
                 {n === "AmericanExpress" ? "Amex" : n}
               </span>
             ))}
           </div>
         )}
 
-        <h3 className="font-display text-base font-bold text-[#0A0A0F] leading-snug line-clamp-2 mb-4 group-hover:text-[#FF1E7E] transition-colors">
+        <h3 className="font-display text-xs sm:text-base font-bold text-[#0A0A0F] leading-snug line-clamp-2 mb-3 sm:mb-4 group-hover:text-[#FF1E7E] transition-colors">
           {card.name}
         </h3>
 
@@ -158,9 +157,9 @@ function CardTile({ card }: { card: CardItem }) {
         <div className="mt-auto">
           <Link
             to={card.alias ? `/cards/${card.alias}` : "/cards"}
-            className="block w-full text-center text-sm font-semibold py-3 rounded-full bg-slate-50 text-slate-700 hover:bg-[#FF1E7E] hover:text-white transition-all"
+            className="block w-full text-center text-xs sm:text-sm font-semibold py-2 sm:py-2.5 rounded-full bg-slate-50 text-slate-700 hover:bg-[#FF1E7E] hover:text-white transition-all"
           >
-            View Details →
+            Details →
           </Link>
         </div>
       </div>
@@ -292,32 +291,31 @@ function ShubhamPicks() {
   };
 
   return (
-    <section className="relative py-20 sm:py-28 bg-white overflow-hidden">
-      <div className="absolute inset-0 lp-grid-bg opacity-30 pointer-events-none" />
-      <div className="container relative z-10 max-w-7xl mx-auto px-6">
+    <section className="relative py-14 sm:py-20 lg:py-24 bg-gradient-to-b from-pink-50/40 to-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
         {/* Section header */}
-        <div className="mb-12 flex flex-col items-center text-center">
-          <div className="lp-eyebrow mb-5">
+        <div className="mb-8 sm:mb-12 flex flex-col items-center text-center">
+          <div className="lp-eyebrow mb-4 sm:mb-5">
             <span>Curated Collections</span>
           </div>
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-[#0A0A0F] tracking-tight mb-4">
-            Explore <span className="lp-gradient-text">LAZYPAY's Picks</span>
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#0A0A0F] tracking-tight mb-3 sm:mb-4 leading-[1.05]">
+            <span className="lp-gradient-text">LAZYPAY's</span> top picks
           </h2>
-          <p className="text-lg text-slate-600 max-w-2xl">
+          <p className="text-base sm:text-lg text-slate-600 max-w-xl">
             Hand-curated credit cards across categories, optimized for maximum rewards.
           </p>
         </div>
 
-        {/* Tab bar */}
-        <div className="flex gap-3 overflow-x-auto pb-1 mb-12 scrollbar-none justify-center flex-wrap">
+        {/* Tab bar - horizontal scroll on mobile */}
+        <div className="flex gap-2 sm:gap-3 overflow-x-auto pb-2 mb-8 sm:mb-10 scrollbar-none justify-start sm:justify-center -mx-5 px-5 sm:mx-0 sm:px-0">
           {(Object.keys(TAB_CONFIG) as TabKey[]).map((key) => (
             <button
               key={key}
               onClick={() => handleTabClick(key)}
-              className={`flex-shrink-0 px-6 py-3 rounded-full text-sm font-semibold transition-all whitespace-nowrap ${
+              className={`flex-shrink-0 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm font-semibold transition-all whitespace-nowrap ${
                 activeTab === key
                   ? "bg-[#0A0A0F] text-white shadow-lg shadow-pink-500/20"
-                  : "bg-white border border-slate-200 text-slate-600 hover:text-[#FF1E7E] hover:border-[#FF1E7E] hover:shadow-md"
+                  : "bg-white border border-slate-200 text-slate-600 hover:text-[#FF1E7E] hover:border-[#FF1E7E]"
               }`}
             >
               {TAB_CONFIG[key].label}
@@ -327,8 +325,8 @@ function ShubhamPicks() {
 
         {/* Loading skeleton */}
         {loading && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {Array.from({ length: 9 }).map((_, i) => <SkeletonCard key={i} />)}
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-5">
+            {Array.from({ length: 6 }).map((_, i) => <SkeletonCard key={i} />)}
           </div>
         )}
 
@@ -338,16 +336,16 @@ function ShubhamPicks() {
             <p className="text-gray-500 text-sm">{error}</p>
             <button
               onClick={() => fetchCardsForTab(activeTab)}
-              className="px-6 py-2.5 rounded-lg bg-[#004E92] text-white text-sm font-semibold hover:bg-[#003A6E] transition-colors"
+              className="lp-btn-primary text-sm"
             >
               Retry
             </button>
           </div>
         )}
 
-        {/* Card grid */}
+        {/* Card grid - mobile-first 2 cols */}
         {!loading && !error && cards.length > 0 && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-5">
             {cards.map((card) => (
               <CardTile key={card.alias || card.name} card={card} />
             ))}
@@ -384,94 +382,175 @@ const HomeLanding = () => {
 
       <main className="flex-1">
         {/* ── Hero ── */}
-        <section className="relative overflow-hidden lp-mesh-bg pt-32 sm:pt-40 pb-20 sm:pb-28">
-          {/* Grid overlay */}
-          <div className="absolute inset-0 lp-grid-bg opacity-40 pointer-events-none" />
+        <section className="relative overflow-hidden bg-white pt-24 sm:pt-32 pb-12 sm:pb-16">
+          {/* Subtle pink glow */}
+          <div className="absolute top-0 right-0 w-[400px] h-[400px] sm:w-[600px] sm:h-[600px] rounded-full bg-pink-500/5 blur-3xl pointer-events-none" />
 
-          {/* Decorative orbs */}
-          <div className="absolute -top-20 -right-20 w-96 h-96 rounded-full bg-gradient-to-br from-pink-400/30 to-purple-500/20 blur-3xl pointer-events-none" />
-          <div className="absolute bottom-0 -left-20 w-[500px] h-[500px] rounded-full bg-gradient-to-tr from-pink-500/20 to-rose-300/20 blur-3xl pointer-events-none" />
+          <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+            <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
+              {/* Eyebrow badge */}
+              <div className="lp-eyebrow lp-fade-up mb-6 sm:mb-8 text-[10px] sm:text-xs">
+                <span>AI-Powered Card Advisor</span>
+              </div>
 
-          <div className="container relative z-10 flex flex-col items-center text-center max-w-5xl mx-auto px-6">
-            {/* Eyebrow */}
-            <div className="lp-eyebrow lp-fade-up mb-8">
-              <span>India's #1 AI-Powered Card Advisor</span>
-            </div>
+              {/* Main headline - mobile-first sizing */}
+              <h1 className="font-display lp-fade-up lp-fade-up-delay-1 text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#0A0A0F] leading-[1.05] tracking-tight mb-4 sm:mb-6">
+                Find your{" "}
+                <span className="lp-gradient-text">perfect card</span>{" "}
+                in 60 seconds.
+              </h1>
 
-            {/* Main headline */}
-            <h1 className="font-display lp-fade-up lp-fade-up-delay-1 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-[#0A0A0F] leading-[0.95] tracking-tight mb-6">
-              Pay smarter.
-              <br />
-              <span className="lp-gradient-text">Live lazier.</span>
-            </h1>
+              <p className="lp-fade-up lp-fade-up-delay-2 text-base sm:text-lg md:text-xl text-slate-600 max-w-xl mx-auto leading-relaxed mb-8 sm:mb-10">
+                AI-powered credit card recommendations tailored to how you spend. No bias. No spam.
+              </p>
 
-            <p className="lp-fade-up lp-fade-up-delay-2 text-lg sm:text-xl md:text-2xl text-slate-600 max-w-2xl mx-auto leading-relaxed mb-10 font-light">
-              Find credit cards that actually pay you back. AI-powered recommendations in under 60 seconds. No bias. No spam.
-            </p>
-
-            {/* Search bar */}
-            <div className="lp-fade-up lp-fade-up-delay-3 w-full max-w-2xl mb-8">
-              <div className="flex items-center gap-0 bg-white rounded-full shadow-2xl shadow-pink-500/10 overflow-hidden border border-pink-100">
-                <div className="relative flex-1">
-                  <Search className="absolute left-6 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-400" />
-                  <input
-                    value={query}
-                    onChange={(e) => setQuery(e.target.value)}
-                    onKeyDown={handleKeyDown}
-                    placeholder="Search by card name or bank..."
-                    className="w-full pl-14 pr-4 h-16 text-base text-slate-800 bg-transparent outline-none placeholder:text-slate-400"
-                  />
+              {/* Search bar - mobile optimized */}
+              <div className="lp-fade-up lp-fade-up-delay-3 w-full max-w-xl mb-6">
+                <div className="flex items-center gap-2 bg-white rounded-full shadow-lg shadow-pink-500/10 p-1.5 sm:p-2 border border-slate-100">
+                  <div className="relative flex-1 min-w-0">
+                    <Search className="absolute left-4 sm:left-5 top-1/2 -translate-y-1/2 h-4 w-4 sm:h-5 sm:w-5 text-slate-400" />
+                    <input
+                      value={query}
+                      onChange={(e) => setQuery(e.target.value)}
+                      onKeyDown={handleKeyDown}
+                      placeholder="Search cards or banks..."
+                      className="w-full pl-11 sm:pl-14 pr-2 h-11 sm:h-12 text-sm sm:text-base text-slate-800 bg-transparent outline-none placeholder:text-slate-400"
+                    />
+                  </div>
+                  <button
+                    onClick={handleSearch}
+                    className="lp-btn-primary h-11 sm:h-12 px-4 sm:px-7 inline-flex items-center gap-2 text-sm sm:text-base flex-shrink-0"
+                  >
+                    Search
+                  </button>
                 </div>
-                <button
-                  onClick={handleSearch}
-                  className="lp-btn-primary h-14 mr-2 px-8 inline-flex items-center gap-2"
-                >
-                  Search
-                  <Search className="w-4 h-4" />
-                </button>
+              </div>
+
+              {/* Trust line */}
+              <div className="lp-fade-up lp-fade-up-delay-4 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs sm:text-sm text-slate-500">
+                <div className="flex items-center gap-1.5">
+                  <div className="w-1.5 h-1.5 rounded-full bg-green-500" />
+                  <span>130+ cards</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <div className="w-1.5 h-1.5 rounded-full bg-pink-500" />
+                  <span>Bank-grade security</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <div className="w-1.5 h-1.5 rounded-full bg-purple-500" />
+                  <span>100% free</span>
+                </div>
               </div>
             </div>
+          </div>
+        </section>
 
-            {/* CTA Buttons */}
-            <div className="lp-fade-up lp-fade-up-delay-4 flex flex-col sm:flex-row gap-4 justify-center items-center">
+        {/* ── Feature Tiles (LAZYPAY app-style) ── */}
+        <section className="relative bg-white pb-12 sm:pb-16">
+          <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 lg:gap-5">
+              {/* AI Genius tile - Lavender */}
               <Link
                 to="/card-genius"
-                className="lp-btn-primary inline-flex items-center gap-2 text-base"
+                className="group relative rounded-3xl p-5 sm:p-6 lg:p-7 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                style={{ background: "linear-gradient(135deg, #EFE9FB 0%, #E4DBF5 100%)" }}
               >
-                Try AI Card Genius
-                <ArrowUpRight className="w-5 h-5" />
+                <div className="relative z-10">
+                  <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-white/60 backdrop-blur mb-3 sm:mb-4">
+                    <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 text-purple-700" strokeWidth={2.2} />
+                  </div>
+                  <h3 className="font-display font-bold text-base sm:text-lg lg:text-xl text-purple-900 mb-1 sm:mb-2 leading-tight">
+                    AI Genius
+                  </h3>
+                  <p className="text-xs sm:text-sm text-purple-700/80 leading-snug">
+                    Smart recommendations
+                  </p>
+                </div>
+                <div className="absolute -bottom-4 -right-4 w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-white/30 rotate-12 group-hover:rotate-6 transition-transform" />
               </Link>
+
+              {/* Discover Cards - Pink */}
               <Link
                 to="/cards"
-                className="lp-btn-ghost inline-flex items-center gap-2 text-base"
+                className="group relative rounded-3xl p-5 sm:p-6 lg:p-7 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                style={{ background: "linear-gradient(135deg, #FFE4EF 0%, #FFD0E0 100%)" }}
               >
-                Browse All Cards
+                <div className="relative z-10">
+                  <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-white/60 backdrop-blur mb-3 sm:mb-4">
+                    <CreditCard className="w-5 h-5 sm:w-6 sm:h-6 text-[#FF1E7E]" strokeWidth={2.2} />
+                  </div>
+                  <h3 className="font-display font-bold text-base sm:text-lg lg:text-xl text-pink-900 mb-1 sm:mb-2 leading-tight">
+                    Discover
+                  </h3>
+                  <p className="text-xs sm:text-sm text-pink-800/80 leading-snug">
+                    Browse 130+ cards
+                  </p>
+                </div>
+                <div className="absolute -bottom-4 -right-4 w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-white/30 rotate-12 group-hover:rotate-6 transition-transform" />
+              </Link>
+
+              {/* Beat My Card - Mint */}
+              <Link
+                to="/beat-my-card"
+                className="group relative rounded-3xl p-5 sm:p-6 lg:p-7 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                style={{ background: "linear-gradient(135deg, #E0F4EC 0%, #C8EBDA 100%)" }}
+              >
+                <div className="relative z-10">
+                  <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-white/60 backdrop-blur mb-3 sm:mb-4">
+                    <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-700" strokeWidth={2.2} />
+                  </div>
+                  <h3 className="font-display font-bold text-base sm:text-lg lg:text-xl text-emerald-900 mb-1 sm:mb-2 leading-tight">
+                    Beat My Card
+                  </h3>
+                  <p className="text-xs sm:text-sm text-emerald-800/80 leading-snug">
+                    Upgrade smarter
+                  </p>
+                </div>
+                <div className="absolute -bottom-4 -right-4 w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-white/30 rotate-12 group-hover:rotate-6 transition-transform" />
+              </Link>
+
+              {/* Category - Peach */}
+              <Link
+                to="/card-genius-category"
+                className="group relative rounded-3xl p-5 sm:p-6 lg:p-7 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                style={{ background: "linear-gradient(135deg, #FFEFD9 0%, #FFE0B8 100%)" }}
+              >
+                <div className="relative z-10">
+                  <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-white/60 backdrop-blur mb-3 sm:mb-4">
+                    <Star className="w-5 h-5 sm:w-6 sm:h-6 text-orange-700" strokeWidth={2.2} />
+                  </div>
+                  <h3 className="font-display font-bold text-base sm:text-lg lg:text-xl text-orange-900 mb-1 sm:mb-2 leading-tight">
+                    Categories
+                  </h3>
+                  <p className="text-xs sm:text-sm text-orange-800/80 leading-snug">
+                    By spend type
+                  </p>
+                </div>
+                <div className="absolute -bottom-4 -right-4 w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-white/30 rotate-12 group-hover:rotate-6 transition-transform" />
               </Link>
             </div>
           </div>
         </section>
 
-        {/* ── Stat Strip ── */}
-        <section className="relative overflow-hidden bg-[#0A0A0F] py-16">
-          <div className="absolute inset-0 lp-dark-bg opacity-60" />
-          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#FF1E7E]/50 to-transparent" />
-          <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#FF1E7E]/50 to-transparent" />
-
-          <div className="container relative z-10 max-w-6xl mx-auto px-6">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {STATS.map((s, i) => (
-                <div key={s.label} className="flex flex-col items-center text-center group">
-                  <span className="font-display text-4xl md:text-5xl font-bold leading-none mb-2 lp-gradient-text">
-                    {s.value}
-                  </span>
-                  <span className="text-xs md:text-sm font-medium tracking-wider uppercase text-slate-400">
-                    {s.label}
-                  </span>
-                  {i < STATS.length - 1 && (
-                    <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-px h-12 bg-white/10" />
-                  )}
-                </div>
-              ))}
+        {/* ── Stat Strip - Clean white version ── */}
+        <section className="relative bg-gradient-to-b from-white to-pink-50/40 py-12 sm:py-16">
+          <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8">
+            <div className="bg-white rounded-3xl border border-slate-100 shadow-lg shadow-pink-500/5 p-6 sm:p-8 lg:p-10">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-4">
+                {STATS.map((s, i) => (
+                  <div key={s.label} className="flex flex-col items-center text-center relative">
+                    <span className="font-display text-3xl sm:text-4xl md:text-5xl font-bold leading-none mb-2 lp-gradient-text">
+                      {s.value}
+                    </span>
+                    <span className="text-[10px] sm:text-xs font-semibold tracking-wider uppercase text-slate-500">
+                      {s.label}
+                    </span>
+                    {i < STATS.length - 1 && (
+                      <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-px h-10 bg-slate-200" />
+                    )}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
