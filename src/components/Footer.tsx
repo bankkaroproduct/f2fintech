@@ -23,7 +23,6 @@ const Footer = () => {
       id: "company",
       title: "Company",
       links: [
-        { label: "About", to: "/about" },
         { label: "Blogs", to: "/blogs" },
         { label: "Contact", to: `mailto:${brandConfig.email}`, external: true },
       ]
