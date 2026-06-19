@@ -3,7 +3,7 @@ import BeatMyCard from "@/views/BeatMyCard";
 
 export const metadata: Metadata = {
   robots: 'noindex, follow',
-  alternates: { canonical: 'https://great.cards/beat-my-card' },
+  alternates: { canonical: 'https://f2fintech.com/beat-my-card' },
 };
 
 export default function BeatMyCardPage() {

@@ -23,7 +23,7 @@ const AppLanding = () => {
           <Link to="/" className="flex items-center gap-1.5">
             <div className="lp-logo-mark" />
             <span className="font-display text-xl sm:text-2xl font-extrabold tracking-tight text-[#0A0A0F]">
-              LAZY<span className="text-[#FF1E7E]">PAY</span>
+              F2 <span className="text-[#3A49D6]">Fintech</span>
             </span>
           </Link>
           <button
@@ -47,7 +47,7 @@ const AppLanding = () => {
           </p>
         </div>
 
-        {/* Top tile pair - like LAZYPAY app's PayLater/GiftCards */}
+        {/* Top tile pair - like F2 Fintech app's PayLater/GiftCards */}
         <div className="grid grid-cols-2 gap-3 mb-4">
           {/* PayLater-style tile */}
           <div
@@ -68,21 +68,21 @@ const AppLanding = () => {
           {/* GiftCards-style tile */}
           <div
             className="rounded-3xl p-5 relative overflow-hidden aspect-[1/1.05]"
-            style={{ background: "linear-gradient(135deg, #FFE4E1 0%, #FFCED0 100%)" }}
+            style={{ background: "linear-gradient(135deg, #E8EBFB 0%, #D0D5F7 100%)" }}
           >
             <div className="flex items-start justify-between mb-1.5">
-              <h3 className="font-display text-xl font-bold text-rose-700 leading-tight">
+              <h3 className="font-display text-xl font-bold text-indigo-700 leading-tight">
                 GiftCards
               </h3>
               <span className="text-[9px] font-bold uppercase tracking-wider bg-emerald-500 text-white px-2 py-0.5 rounded-md">
                 New
               </span>
             </div>
-            <p className="text-xs text-rose-700/80 leading-snug">
+            <p className="text-xs text-indigo-700/80 leading-snug">
               Discounts on 400+ brands
             </p>
-            <div className="absolute bottom-3 right-3 w-14 h-14 rounded-2xl bg-rose-500/20 flex items-center justify-center rotate-[10deg]">
-              <LayoutGrid className="w-7 h-7 text-rose-700" strokeWidth={2.2} />
+            <div className="absolute bottom-3 right-3 w-14 h-14 rounded-2xl bg-indigo-500/20 flex items-center justify-center rotate-[10deg]">
+              <LayoutGrid className="w-7 h-7 text-indigo-700" strokeWidth={2.2} />
             </div>
           </div>
         </div>
@@ -99,23 +99,23 @@ const AppLanding = () => {
           {/* Decorative chevron pattern */}
           <div className="absolute inset-0 opacity-20 pointer-events-none">
             <svg className="w-full h-full" viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice">
-              <path d="M0 130 L200 30 L400 130 L400 260 L0 260 Z" fill="rgba(255,30,126,0.15)" />
-              <path d="M0 180 L200 80 L400 180 L400 260 L0 260 Z" fill="rgba(255,30,126,0.1)" />
+              <path d="M0 130 L200 30 L400 130 L400 260 L0 260 Z" fill="rgba(58,73,214,0.15)" />
+              <path d="M0 180 L200 80 L400 180 L400 260 L0 260 Z" fill="rgba(58,73,214,0.1)" />
             </svg>
           </div>
 
           {/* Glow */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-80 h-80 rounded-full bg-[#FF1E7E]/20 blur-3xl pointer-events-none" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-80 h-80 rounded-full bg-[#3A49D6]/20 blur-3xl pointer-events-none" />
 
           <div className="relative z-10 p-7 sm:p-8 h-full flex flex-col">
-            <span className="inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.18em] uppercase text-pink-200/80 mb-2">
-              <Sparkles className="w-3.5 h-3.5 text-[#FF1E7E]" />
+            <span className="inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.18em] uppercase text-indigo-200/80 mb-2">
+              <Sparkles className="w-3.5 h-3.5 text-[#3A49D6]" />
               AI-Powered
             </span>
             <h2 className="font-display text-3xl sm:text-4xl font-bold leading-[1.05] mb-2">
               <span className="text-white">Find your</span>
               <br />
-              <span className="text-[#FF1E7E]">best credit card</span>
+              <span className="text-[#3A49D6]">best credit card</span>
             </h2>
             <p className="text-sm text-slate-300 mb-auto pb-6 max-w-xs">
               Personalized AI recommendations in 60 seconds. 130+ cards analyzed.
@@ -123,7 +123,7 @@ const AppLanding = () => {
 
             {/* Get Started button - white pill like the app */}
             <div className="mt-6">
-              <span className="inline-flex w-full items-center justify-center gap-2 bg-white text-[#0A0A0F] font-bold text-base py-3.5 rounded-2xl group-hover:bg-pink-50 transition-colors">
+              <span className="inline-flex w-full items-center justify-center gap-2 bg-white text-[#0A0A0F] font-bold text-base py-3.5 rounded-2xl group-hover:bg-indigo-50 transition-colors">
                 Get Started
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </span>
@@ -136,7 +136,7 @@ const AppLanding = () => {
           <div className="w-1.5 h-1.5 rounded-full bg-slate-300" />
           <div className="w-1.5 h-1.5 rounded-full bg-slate-300" />
           <div className="w-1.5 h-1.5 rounded-full bg-slate-300" />
-          <div className="w-5 h-1.5 rounded-full bg-[#FF1E7E]" />
+          <div className="w-5 h-1.5 rounded-full bg-[#3A49D6]" />
         </div>
 
         {/* Quick action tiles */}
@@ -147,10 +147,10 @@ const AppLanding = () => {
         <div className="grid grid-cols-2 gap-3 mb-3">
           <Link
             to="/card-genius"
-            className="group rounded-2xl p-4 bg-white border border-slate-100 hover:border-pink-200 hover:shadow-lg transition-all"
+            className="group rounded-2xl p-4 bg-white border border-slate-100 hover:border-indigo-200 hover:shadow-lg transition-all"
           >
-            <div className="w-10 h-10 rounded-xl bg-pink-100 flex items-center justify-center mb-2.5">
-              <Sparkles className="w-5 h-5 text-[#FF1E7E]" strokeWidth={2.2} />
+            <div className="w-10 h-10 rounded-xl bg-indigo-100 flex items-center justify-center mb-2.5">
+              <Sparkles className="w-5 h-5 text-[#3A49D6]" strokeWidth={2.2} />
             </div>
             <h4 className="font-display text-sm font-bold text-[#0A0A0F] mb-0.5">
               AI Genius

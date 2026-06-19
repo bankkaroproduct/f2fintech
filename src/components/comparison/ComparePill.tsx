@@ -38,7 +38,7 @@ export function ComparePill() {
           isVisible && !isPanelOpen ? "animate-slide-in-right" : "opacity-0 pointer-events-none"
         )}
       >
-        <div className="bg-gradient-to-r from-[#0B7A8A] to-[#E0F7F9] rounded-2xl shadow-2xl px-4 py-3 backdrop-blur-md border border-[#0B7A8A]/25">
+        <div className="bg-gradient-to-r from-[#3A49D6] to-[#EEF0FF] rounded-2xl shadow-2xl px-4 py-3 backdrop-blur-md border border-[#3A49D6]/25">
           {/* Header */}
           <div className="flex items-center justify-between mb-3">
             <span className="text-xs sm:text-sm font-semibold text-primary-foreground flex items-center gap-1.5 sm:gap-2">

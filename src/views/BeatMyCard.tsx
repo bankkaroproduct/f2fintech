@@ -609,7 +609,7 @@ const BeatMyCard = () => {
 
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-8 sm:mb-10 px-4">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-5 bg-gradient-to-r from-[#E0F7F9] to-[#0B7A8A] bg-clip-text text-transparent">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-5 bg-gradient-to-r from-[#EEF0FF] to-[#3A49D6] bg-clip-text text-transparent">
                 Beat My Card
               </h1>
               <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 sm:mb-8 max-w-2xl mx-auto">
@@ -622,7 +622,7 @@ const BeatMyCard = () => {
                   <Sparkles className="w-4 h-4 mr-2" />
                   AI-Powered
                 </Badge>
-                <Badge variant="secondary" className="px-4 py-2 text-sm font-medium bg-[#E0F7F9] text-primary border-[#0B7A8A]/20 hover:bg-[#d4ecff] transition-colors">
+                <Badge variant="secondary" className="px-4 py-2 text-sm font-medium bg-[#EEF0FF] text-primary border-[#3A49D6]/20 hover:bg-[#DDE0FF] transition-colors">
                   <Shield className="w-4 h-4 mr-2" />
                   Unbiased Results
                 </Badge>
@@ -647,11 +647,21 @@ const BeatMyCard = () => {
     const progress = (currentStep + 1) / questions.length * 100;
     return <>
       <Navigation />
-      <div className="min-h-screen bg-background pt-24 pb-16">
+      {/* Fixed progress bar */}
+      <div className="fixed top-[4.5rem] left-0 right-0 z-40 bg-white/80 backdrop-blur-md border-b border-[#3A49D6]/10">
+        <div className="h-1.5 bg-[#EEF0FF]">
+          <div className="h-full bg-gradient-to-r from-[#3A49D6] to-[#6C7BF0] rounded-r-full transition-all duration-500 ease-out" style={{ width: `${progress}%` }} />
+        </div>
+        <div className="max-w-2xl mx-auto px-4 py-2 flex items-center justify-between">
+          <p className="text-xs font-semibold text-[#3A49D6]">Question {currentStep + 1} of {questions.length}</p>
+          <p className="text-xs font-bold text-slate-500">{Math.round(progress)}% complete</p>
+        </div>
+      </div>
+      <div className="min-h-screen bg-[#F8F9FF] pt-28 pb-16">
         <div className="container mx-auto px-4 py-8">
           {/* Header with Navigation */}
           <div className="flex items-center justify-between mb-8">
-            <Button variant="ghost" onClick={() => router.push('/')} className="gap-2 hover:bg-[#E0F7F9]">
+            <Button variant="ghost" onClick={() => router.push('/')} className="gap-2 hover:bg-[#EEF0FF]">
               <Home className="h-4 w-4" />
               <span className="hidden sm:inline">Home</span>
             </Button>
@@ -662,41 +672,25 @@ const BeatMyCard = () => {
             </Button>
           </div>
 
-          <div className="max-w-2xl mx-auto">
-            {/* Progress bar */}
-            <div className="mb-8">
-              <div className="flex justify-between text-sm text-muted-foreground mb-2">
-                <span>Question {currentStep + 1} of {questions.length}</span>
-                <span>{Math.round(progress)}% Complete</span>
-              </div>
-              <div className="h-2 bg-muted rounded-full overflow-hidden">
-                <div className="h-full bg-gradient-to-r from-[#0B7A8A] to-[#E0F7F9] transition-all duration-300" style={{
-                  width: `${progress}%`
-                }} />
-              </div>
-            </div>
-
-            {/* Question card */}
-            <div className="bg-card border border-border rounded-2xl p-8 shadow-lg mb-6">
+          <div className="max-w-2xl mx-auto pt-8">
+            {/* Question */}
               <SpendingInput question={question.question} emoji={question.emoji} value={responses[question.field] || 0} onChange={value => setResponses({
                 ...responses,
                 [question.field]: value
               })} min={question.min} max={question.max} step={question.step} showRupee={!question.isCount} />
-            </div>
 
             {/* Navigation buttons */}
-            <div className="flex flex-col items-center gap-3 mt-8">
-              <div className="flex items-center justify-between w-full gap-4">
-                <Button variant="outline" onClick={handlePrev} disabled={currentStep === 0} className="rounded-full border-2 border-[#0B7A8A] bg-background hover:bg-[#E0F7F9]/20 text-[#0B7A8A] px-8 h-12 transition-all duration-200">
+            <div className="flex items-center gap-3 mt-6">
+                <Button variant="outline" onClick={handlePrev} disabled={currentStep === 0} className="flex-1 h-12 rounded-xl border-slate-200 hover:border-[#3A49D6]/30 hover:bg-[#EEF0FF]/50 font-semibold transition-all duration-200">
                   <ArrowLeft className="mr-2 h-4 w-4" />
                   Previous
                 </Button>
 
-                <Button variant="ghost" onClick={handleSkipAll} disabled={isCalculating} className="text-foreground hover:text-foreground/80 font-semibold text-base px-0">
+                <Button variant="ghost" onClick={handleSkipAll} disabled={isCalculating} className="h-12 rounded-xl font-bold text-slate-500 hover:text-[#3A49D6] hover:bg-[#EEF0FF]/50">
                   {isCalculating ? "Calculating..." : "Skip All"}
                 </Button>
 
-                <Button onClick={handleNext} disabled={isCalculating} className="rounded-full bg-[#E0F7F9] hover:bg-[#E0F7F9]/90 text-[#064D59] px-8 h-12 shadow-md hover:shadow-lg transition-all duration-200">
+                <Button onClick={handleNext} disabled={isCalculating} className="flex-1 h-12 rounded-xl bg-[#3A49D6] hover:bg-[#2C3CE3] text-white shadow-lg shadow-[#3A49D6]/20 font-semibold transition-all duration-200">
                   {isCalculating ? <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                     Calculating...
@@ -708,12 +702,13 @@ const BeatMyCard = () => {
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </>}
                 </Button>
-              </div>
-
-              <Button variant="ghost" onClick={handleSkip} className="text-sm text-muted-foreground hover:text-muted-foreground/80 px-0 h-auto">
-                Skip this question →
-              </Button>
             </div>
+
+              <div className="text-center mt-3">
+                <Button variant="ghost" onClick={handleSkip} className="text-sm text-slate-400 hover:text-[#3A49D6] px-0 h-auto">
+                  Skip this question →
+                </Button>
+              </div>
           </div>
         </div>
       </div>
@@ -729,7 +724,7 @@ const BeatMyCard = () => {
     const userAnnualText = userCardData.annual_saving?.toLocaleString('en-IN') || '0';
     const geniusAnnualText = geniusCardData.annual_saving?.toLocaleString('en-IN') || '0';
     const savingsPercent = userCardData.annual_saving > 0 ? ((geniusCardData.annual_saving - userCardData.annual_saving) / userCardData.annual_saving) * 100 : 100;
-    const heroGradient = isUserWinner ? 'from-[#E0F7F9] via-[#0B7A8A] to-[#0B7A8A]' : 'from-[#0B7A8A] via-[#0B7A8A] to-[#064D59]';
+    const heroGradient = isUserWinner ? 'from-[#EEF0FF] via-[#3A49D6] to-[#3A49D6]' : 'from-[#3A49D6] via-[#3A49D6] to-[#2C3CE3]';
     const heroTitle = isUserWinner ? 'You’re already winning!' : 'We Found Your Upgrade!';
     const heroSubtitle = isUserWinner
       ? `Your ${userCardData.name} already earns ₹${userAnnualText} every year.`
@@ -738,12 +733,12 @@ const BeatMyCard = () => {
       {
         label: 'Your Card',
         value: userCardData.annual_saving || 0,
-        accent: 'from-rose-400 to-rose-500'
+        accent: 'from-slate-400 to-slate-500'
       },
       {
         label: 'Recommended Card',
         value: geniusCardData.annual_saving || 0,
-        accent: 'from-[#0B7A8A] to-[#085F6D]'
+        accent: 'from-[#3A49D6] to-[#2C3CE3]'
       }
     ];
     const extractNumeric = (input: string) => Number(input.replace(/[^0-9.-]/g, ''));
@@ -852,7 +847,7 @@ const BeatMyCard = () => {
                   setResponses({});
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
-                className="gap-2 hover:bg-[#f0f9ff] border-[#0B7A8A]/30 text-primary hover:border-primary"
+                className="gap-2 hover:bg-[#f0f9ff] border-[#3A49D6]/30 text-primary hover:border-primary"
               >
                 <ArrowLeft className="h-4 w-4" />
                 Change Card Selection
@@ -927,11 +922,11 @@ const BeatMyCard = () => {
                 return (
                   <div
                     key={card.id || index}
-                    className={`relative bg-white border rounded-3xl p-6 shadow-lg transition-all ${isWinnerCard ? 'border-4 border-[#0B7A8A] shadow-[#E0F7F9] scale-[1.01]' : 'border-slate-100'
+                    className={`relative bg-white border rounded-3xl p-6 shadow-lg transition-all ${isWinnerCard ? 'border-4 border-[#3A49D6] shadow-[#EEF0FF] scale-[1.01]' : 'border-slate-100'
                       }`}
                   >
                     {isWinnerCard && (
-                      <div className="absolute -top-4 left-6 bg-[#0B7A8A] text-white px-4 py-1 rounded-full text-xs font-bold flex items-center gap-2 shadow-lg">
+                      <div className="absolute -top-4 left-6 bg-[#3A49D6] text-white px-4 py-1 rounded-full text-xs font-bold flex items-center gap-2 shadow-lg">
                         <Sparkles className="w-4 h-4" />
                         Winner Choice
                       </div>
@@ -1019,8 +1014,8 @@ const BeatMyCard = () => {
                   <AccordionItem value="breakdown" className="border-none">
                     <AccordionTrigger className="px-6 py-4 hover:no-underline">
                       <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-full bg-[#E0F7F9] flex items-center justify-center">
-                          <TrendingUp className="w-5 h-5 text-[#0B7A8A]" />
+                        <div className="w-10 h-10 rounded-full bg-[#EEF0FF] flex items-center justify-center">
+                          <TrendingUp className="w-5 h-5 text-[#3A49D6]" />
                         </div>
                         <div className="text-left">
                           <h3 className="text-lg font-bold text-slate-900">Category-wise breakdown</h3>
@@ -1040,13 +1035,13 @@ const BeatMyCard = () => {
                                   <p className="font-semibold text-slate-900">{category.category}</p>
                                 </div>
                                 {difference > 0 && (
-                                  <span className="text-xs font-semibold text-[#0B7A8A] bg-[#E0F7F9] px-3 py-1 rounded-full">
+                                  <span className="text-xs font-semibold text-[#3A49D6] bg-[#EEF0FF] px-3 py-1 rounded-full">
                                     +₹{difference.toLocaleString('en-IN')} more
                                   </span>
                                 )}
                               </div>
                               <div className="grid sm:grid-cols-2 gap-4 mt-3">
-                                {[{ label: 'Your Card', value: category.userSaving, accent: 'from-rose-300 to-rose-400' }, { label: 'Recommended Card', value: category.geniusSaving, accent: 'from-[#0B7A8A] to-[#085F6D]' }].map(column => (
+                                {[{ label: 'Your Card', value: category.userSaving, accent: 'from-slate-300 to-slate-400' }, { label: 'Recommended Card', value: category.geniusSaving, accent: 'from-[#3A49D6] to-[#2C3CE3]' }].map(column => (
                                   <div key={column.label} className="space-y-2">
                                     <p className="text-xs uppercase tracking-[0.3em] text-slate-500">{column.label}</p>
                                     <p className="text-xl font-bold text-slate-900">₹{column.value.toLocaleString('en-IN')}</p>
@@ -1071,7 +1066,7 @@ const BeatMyCard = () => {
               <div className="flex flex-col md:flex-row gap-4 items-center">
                 <Button
                   size="lg"
-                  className="w-full md:flex-1 text-lg font-semibold bg-[#0B7A8A] hover:bg-[#085F6D] text-white hover:shadow-xl hover:scale-[1.01] transition"
+                  className="w-full md:flex-1 text-lg font-semibold bg-[#3A49D6] hover:bg-[#2C3CE3] text-white hover:shadow-xl hover:scale-[1.01] transition"
                   onClick={() => handleApplyNow(isUserWinner ? userCardData : geniusCardData)}
                 >
                   Apply for {isUserWinner ? 'This Card' : 'Better Card'}

@@ -9,7 +9,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { alias } = await params;
   return {
     robots: 'noindex, follow',
-    alternates: { canonical: `https://great.cards/credit-card-store/${alias}` },
+    alternates: { canonical: `https://f2fintech.com/credit-card-store/${alias}` },
   };
 }
 

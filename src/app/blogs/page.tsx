@@ -3,13 +3,13 @@ import Navigation from "@/components/Navigation";
 import BlogsGrid from "@/components/BlogsGrid";
 
 export const metadata: Metadata = {
-  title: "Blog — Credit Card Tips, Travel Rewards & Financial Guides | BankKaro",
+  title: "Blog — Credit Card Tips, Travel Rewards & Financial Guides | F2 Fintech",
   description:
     "Expert articles on maximising credit card rewards, travel hacking, building credit, and making smarter financial decisions. Real strategies, real savings.",
   robots: 'noindex, follow',
-  alternates: { canonical: 'https://great.cards/blogs' },
+  alternates: { canonical: 'https://f2fintech.com/blogs' },
   openGraph: {
-    title: "Blog — BankKaro",
+    title: "Blog — F2 Fintech",
     description: "Expert credit card tips, travel reward strategies, and financial guides.",
     type: "website",
   },
@@ -23,7 +23,7 @@ export default function BlogsPage() {
       {/* Hero header */}
       <div className="pt-24 pb-10 px-4 bg-gradient-to-br from-[#f0f9ff] via-background to-background border-b border-border/40">
         <div className="max-w-7xl mx-auto">
-          <div className="inline-flex items-center gap-2 bg-[#E0F7F9] text-black px-4 py-1.5 rounded-full text-sm font-semibold mb-4">
+          <div className="inline-flex items-center gap-2 bg-[#EEF0FF] text-black px-4 py-1.5 rounded-full text-sm font-semibold mb-4">
             Expert Insights
           </div>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-3 leading-tight">

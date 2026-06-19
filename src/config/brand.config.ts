@@ -24,20 +24,20 @@ export interface BrandConfig {
 }
 
 export const brandConfig: BrandConfig = {
-  name: process.env.NEXT_PUBLIC_BRAND_NAME || 'LAZYPAY',
-  tagline: process.env.NEXT_PUBLIC_BRAND_TAGLINE || 'Smart Payment Solutions for Everyone',
-  logo: process.env.NEXT_PUBLIC_BRAND_LOGO || '/lazypay-logo.png',
-  favicon: process.env.NEXT_PUBLIC_BRAND_FAVICON || '/lazypay-favicon.png',
-  email: process.env.NEXT_PUBLIC_BRAND_EMAIL || 'support@lazypay.com',
+  name: process.env.NEXT_PUBLIC_BRAND_NAME || 'F2 Fintech',
+  tagline: process.env.NEXT_PUBLIC_BRAND_TAGLINE || 'Instant Personal & Business Loans | Fast Approval India',
+  logo: process.env.NEXT_PUBLIC_BRAND_LOGO || '/f2fintech-logo.png',
+  favicon: process.env.NEXT_PUBLIC_BRAND_FAVICON || '/f2fintech-favicon.png',
+  email: process.env.NEXT_PUBLIC_BRAND_EMAIL || 'support@f2fintech.com',
   analyticsId: process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || '',
-  headerBgColor: process.env.NEXT_PUBLIC_HEADER_BG_COLOR || '#FF1E7E',
+  headerBgColor: process.env.NEXT_PUBLIC_HEADER_BG_COLOR || '#3A49D6',
   colors: {
-    primaryHue: process.env.NEXT_PUBLIC_PRIMARY_HUE || '208',
-    primarySaturation: process.env.NEXT_PUBLIC_PRIMARY_SAT || '100%',
-    primaryLightness: process.env.NEXT_PUBLIC_PRIMARY_LIGHT || '28.6%',
-    secondaryHue: process.env.NEXT_PUBLIC_SECONDARY_HUE || '0',
-    secondarySaturation: process.env.NEXT_PUBLIC_SECONDARY_SAT || '0%',
-    secondaryLightness: process.env.NEXT_PUBLIC_SECONDARY_LIGHT || '96.1%',
+    primaryHue: process.env.NEXT_PUBLIC_PRIMARY_HUE || '234',
+    primarySaturation: process.env.NEXT_PUBLIC_PRIMARY_SAT || '66%',
+    primaryLightness: process.env.NEXT_PUBLIC_PRIMARY_LIGHT || '53%',
+    secondaryHue: process.env.NEXT_PUBLIC_SECONDARY_HUE || '213',
+    secondarySaturation: process.env.NEXT_PUBLIC_SECONDARY_SAT || '100%',
+    secondaryLightness: process.env.NEXT_PUBLIC_SECONDARY_LIGHT || '97%',
   }
 };
 

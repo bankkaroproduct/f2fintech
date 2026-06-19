@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-const PARTNER_BASE_URL = 'https://platform.bankkaro.com/partner';
+const PARTNER_BASE_URL = process.env.PARTNER_BASE_URL || 'https://uat-platform.bankkaro.com/partner';
 // bk-api is the public-facing BankKaro API. It supports CORS and needs no auth.
 // The partner API key does not have permission for cardgenius/cards on platform.bankkaro.com,
 // so card listing routes are forwarded here instead.

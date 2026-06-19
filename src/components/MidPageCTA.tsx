@@ -44,7 +44,7 @@ const MidPageCTA = () => {
       className="py-20 opacity-0 translate-y-10"
     >
       <div className="container mx-auto px-4">
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0B7A8A] to-[#E0F7F9] p-12 text-white shadow-2xl">
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#3A49D6] to-[#EEF0FF] p-12 text-white shadow-2xl">
           {/* Animated background pattern */}
           <div className="absolute inset-0 opacity-10">
             <div className="absolute w-96 h-96 bg-white rounded-full blur-3xl -top-48 -right-48 animate-float"></div>

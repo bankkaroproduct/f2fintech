@@ -79,16 +79,20 @@ export const SpendingInput = ({
   const percentage = ((localValue - min) / (max - min)) * 100;
 
   return (
-    <div className={cn("mb-6 sm:mb-8 p-4 sm:p-6 bg-white rounded-xl sm:rounded-2xl shadow-card transition-all duration-300", isFocused && "shadow-card-hover ring-2 ring-primary/20", className)}>
-      <label className="block mb-3 sm:mb-4">
-        <span className="text-base sm:text-lg font-medium text-charcoal-800">
-          {question} <span className="text-xl sm:text-2xl ml-1 sm:ml-2">{emoji}</span>
+    <div className={cn(
+      "p-5 sm:p-7 bg-white rounded-2xl sm:rounded-3xl border border-slate-100 shadow-[0_8px_40px_rgba(58,73,214,0.06)] transition-all duration-300",
+      isFocused && "shadow-[0_8px_40px_rgba(58,73,214,0.12)] border-[#3A49D6]/20",
+      className
+    )}>
+      <label className="block mb-5">
+        <span className="text-base sm:text-lg font-semibold text-slate-800 leading-snug">
+          {question} <span className="text-xl sm:text-2xl ml-1">{emoji}</span>
         </span>
       </label>
 
-      <div className="relative mb-4 sm:mb-6">
+      <div className="relative mb-5">
         {showRupee && showCurrency && (
-          <span className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 text-charcoal-500 text-lg sm:text-xl pointer-events-none">
+          <span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-lg font-medium pointer-events-none">
             ₹
           </span>
         )}
@@ -99,21 +103,21 @@ export const SpendingInput = ({
           onFocus={handleFocus}
           onBlur={handleBlur}
           className={cn(
-            "w-full pr-3 sm:pr-4 py-3 sm:py-4 text-xl sm:text-2xl font-mono font-bold text-primary border-2 border-charcoal-200 rounded-lg sm:rounded-xl focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all duration-300 touch-target",
-            (showRupee && showCurrency) ? "pl-10 sm:pl-12" : "pl-3 sm:pl-4"
+            "w-full pr-4 py-4 text-2xl sm:text-3xl font-bold text-[#3A49D6] bg-[#F8F9FF] border-2 border-slate-200 rounded-2xl focus:outline-none focus:border-[#3A49D6] focus:bg-white focus:ring-4 focus:ring-[#3A49D6]/10 transition-all duration-300 touch-target placeholder:text-slate-300",
+            (showRupee && showCurrency) ? "pl-11" : "pl-4"
           )}
           placeholder="0"
           min={min}
           step={step}
         />
         {suffix && (
-          <span className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 text-charcoal-500 text-xs sm:text-sm pointer-events-none">
+          <span className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm font-medium pointer-events-none">
             {suffix}
           </span>
         )}
       </div>
 
-      <div className="relative pt-2">
+      <div className="relative pt-1">
         <input
           type="range"
           min={min}
@@ -122,9 +126,9 @@ export const SpendingInput = ({
           value={localValue}
           onChange={handleSliderChange}
           style={{
-            background: `linear-gradient(to right, hsl(var(--primary)) 0%, hsl(var(--primary)) ${percentage}%, hsl(var(--charcoal-200)) ${percentage}%, hsl(var(--charcoal-200)) 100%)`
+            background: `linear-gradient(to right, #3A49D6 0%, #6C7BF0 ${percentage}%, #EEF0FF ${percentage}%, #EEF0FF 100%)`
           }}
-          className="w-full h-2.5 sm:h-2 rounded-full appearance-none cursor-pointer touch-target
+          className="w-full h-3 sm:h-2.5 rounded-full appearance-none cursor-pointer touch-target
                    [&::-webkit-slider-thumb]:appearance-none
                    [&::-webkit-slider-thumb]:w-7
                    [&::-webkit-slider-thumb]:h-7
@@ -132,24 +136,25 @@ export const SpendingInput = ({
                    sm:[&::-webkit-slider-thumb]:h-6
                    [&::-webkit-slider-thumb]:rounded-full
                    [&::-webkit-slider-thumb]:bg-white
-                   [&::-webkit-slider-thumb]:border-3
-                   [&::-webkit-slider-thumb]:border-primary
+                   [&::-webkit-slider-thumb]:border-[3px]
+                   [&::-webkit-slider-thumb]:border-[#3A49D6]
                    [&::-webkit-slider-thumb]:cursor-pointer
-                   [&::-webkit-slider-thumb]:shadow-lg
+                   [&::-webkit-slider-thumb]:shadow-[0_2px_8px_rgba(58,73,214,0.3)]
                    [&::-webkit-slider-thumb]:transition-transform
-                   [&::-webkit-slider-thumb]:active:scale-110
+                   [&::-webkit-slider-thumb]:active:scale-125
+                   [&::-webkit-slider-thumb]:hover:shadow-[0_2px_12px_rgba(58,73,214,0.4)]
                    [&::-moz-range-thumb]:w-7
                    [&::-moz-range-thumb]:h-7
                    sm:[&::-moz-range-thumb]:w-6
                    sm:[&::-moz-range-thumb]:h-6
                    [&::-moz-range-thumb]:rounded-full
                    [&::-moz-range-thumb]:bg-white
-                   [&::-moz-range-thumb]:border-3
-                   [&::-moz-range-thumb]:border-primary
+                   [&::-moz-range-thumb]:border-[3px]
+                   [&::-moz-range-thumb]:border-[#3A49D6]
                    [&::-moz-range-thumb]:cursor-pointer
-                   [&::-moz-range-thumb]:shadow-lg"
+                   [&::-moz-range-thumb]:shadow-[0_2px_8px_rgba(58,73,214,0.3)]"
         />
-        <div className="flex justify-between mt-2 sm:mt-3 text-xs sm:text-sm text-charcoal-500">
+        <div className="flex justify-between mt-2 text-xs font-medium text-slate-400">
           <span>{(showRupee && showCurrency) ? '₹' : ''}{min.toLocaleString('en-IN')}{suffix}</span>
           <span>{(showRupee && showCurrency) ? '₹' : ''}{max.toLocaleString('en-IN')}{suffix}</span>
         </div>

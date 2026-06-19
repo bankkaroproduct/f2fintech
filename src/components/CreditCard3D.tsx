@@ -148,7 +148,7 @@ export const CreditCard3D = ({
         />
 
         {/* Holographic Effect */}
-        <div className="absolute inset-0 rounded-3xl opacity-20 pointer-events-none bg-gradient-to-br from-[#E0F7F9] via-[#60A5FA] to-[#0B7A8A] mix-blend-overlay" />
+        <div className="absolute inset-0 rounded-3xl opacity-20 pointer-events-none bg-gradient-to-br from-[#EEF0FF] via-[#60A5FA] to-[#3A49D6] mix-blend-overlay" />
 
         {/* Card Content */}
         <div className="relative z-10 p-8 h-full flex flex-col justify-between" style={{ transform: "translateZ(20px)" }}>

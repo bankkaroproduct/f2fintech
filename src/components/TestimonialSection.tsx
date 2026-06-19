@@ -90,7 +90,7 @@ const TestimonialCard = ({
       </div>
       <div className="text-right flex-shrink-0">
         <p className="text-[10px] sm:text-xs text-muted-foreground">Saved</p>
-        <p className="text-xs sm:text-sm font-bold text-[#0B7A8A]">{testimonial.savings}</p>
+        <p className="text-xs sm:text-sm font-bold text-[#3A49D6]">{testimonial.savings}</p>
       </div>
     </div>
   </div>;
@@ -140,7 +140,7 @@ const TestimonialSection = () => {
           </div>
         </div>
 
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-[#0B7A8A] to-[#E0F7F9] bg-clip-text text-transparent">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-[#3A49D6] to-[#EEF0FF] bg-clip-text text-transparent">
           India's Smartest Are Saving
         </h2>
         <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto">

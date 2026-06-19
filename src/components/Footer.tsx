@@ -31,8 +31,8 @@ const Footer = () => {
       id: "legal",
       title: "Legal",
       links: [
-        { label: "Privacy Policy", to: "https://lazypay.com/privacy-policy", external: true },
-        { label: "Terms of Service", to: "https://lazypay.com/terms-conditions", external: true },
+        { label: "Privacy Policy", to: "https://f2fintech.com/privacy-policy", external: true },
+        { label: "Terms of Service", to: "https://f2fintech.com/terms-conditions", external: true },
       ]
     }
   ]), []);
@@ -42,16 +42,16 @@ const Footer = () => {
       {/* Background */}
       <div className="absolute inset-0 bg-[#0A0A0F]" />
       <div className="absolute inset-0 lp-dark-bg opacity-80" />
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#FF1E7E]/50 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#38BDF8]/50 to-transparent" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-20 sm:pt-24 pb-10">
         {/* Top CTA section */}
         <div className="mb-16 pb-16 border-b border-white/10">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
             <div className="max-w-2xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/20 mb-4">
-                <Sparkles className="w-3.5 h-3.5 text-[#FF1E7E]" />
-                <span className="text-xs font-semibold text-[#FF1E7E] uppercase tracking-wider">Ready to start?</span>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 mb-4">
+                <Sparkles className="w-3.5 h-3.5 text-[#3A49D6]" />
+                <span className="text-xs font-semibold text-[#3A49D6] uppercase tracking-wider">Ready to start?</span>
               </div>
               <h2 className="font-display text-4xl md:text-5xl font-bold tracking-tight mb-3">
                 Find your <span className="lp-gradient-text">perfect card</span>
@@ -71,21 +71,18 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 mb-12">
           {/* Brand column */}
           <div className="md:col-span-5">
-            <Link to="/" className="inline-flex items-center gap-2 mb-6">
-              <div className="lp-logo-mark" />
-              <span className="font-display text-2xl font-extrabold tracking-tight">
-                LAZY<span className="text-[#FF1E7E]">PAY</span>
-              </span>
+            <Link to="/" className="inline-flex items-center mb-6">
+              <img src="/f2fintech-logo.webp" alt="F2 Fintech" className="h-10 w-auto brightness-0 invert" />
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed max-w-sm mb-6">
               Smart payment solutions for everyone. Discover credit cards that actually pay you back with AI-powered recommendations.
             </p>
             <a
               href={`mailto:${brandConfig.email}`}
-              className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-[#FF1E7E] transition-colors group mb-5"
+              className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-[#3A49D6] transition-colors group mb-5"
             >
               <Mail className="w-4 h-4" />
-              <span className="border-b border-transparent group-hover:border-[#FF1E7E]">{brandConfig.email}</span>
+              <span className="border-b border-transparent group-hover:border-[#3A49D6]">{brandConfig.email}</span>
             </a>
 
             {/* Powered by Bankkaro */}
@@ -167,15 +164,10 @@ const Footer = () => {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="border-t border-white/10 pt-8 flex items-center justify-center">
           <p className="text-xs text-slate-500">
-            © {new Date().getFullYear()} LAZYPAY. All rights reserved.
+            © {new Date().getFullYear()} Pouring Pounds India Pvt Ltd. All rights reserved.
           </p>
-          <div className="flex items-center gap-6 text-xs text-slate-500">
-            <a href="https://www.instagram.com/lazypay_official/" target="_blank" rel="noopener noreferrer" className="hover:text-[#FF1E7E] transition-colors">Instagram</a>
-            <a href="https://www.youtube.com/@lazypayofficial" target="_blank" rel="noopener noreferrer" className="hover:text-[#FF1E7E] transition-colors">YouTube</a>
-            <a href="https://www.facebook.com/lazypayofficial/" target="_blank" rel="noopener noreferrer" className="hover:text-[#FF1E7E] transition-colors">Facebook</a>
-          </div>
         </div>
       </div>
     </footer>

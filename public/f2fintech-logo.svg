@@ -1,0 +1,13 @@
+<svg width="160" height="44" viewBox="0 0 160 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- F2 monogram mark - two flowing strokes -->
+  <g>
+    <!-- Left stroke - tall F stem with top curve -->
+    <path d="M8 40 L8 12 C8 5, 14 1, 20 1 C26 1, 30 5, 30 9" stroke="#3A49D6" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+    <!-- Middle connecting stroke -->
+    <path d="M8 22 L22 22" stroke="#3A49D6" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+    <!-- Right stroke - the 2 curve -->
+    <path d="M22 1 C30 1, 38 5, 38 12 C38 18, 32 24, 22 30 L38 30" stroke="#3A49D6" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+  <!-- FINTECH wordmark -->
+  <text x="54" y="30" fill="#3A49D6" font-family="'Outfit', 'Inter', system-ui, sans-serif" font-weight="700" font-size="20" letter-spacing="2">FINTECH</text>
+</svg>

@@ -9,10 +9,10 @@ const tools = [
     description:
       "AI-powered recommendations for the perfect credit card based on your spending habits.",
     to: "/card-genius",
-    bg: "linear-gradient(135deg, #FFE4EF 0%, #FFCEDF 100%)",
-    iconBg: "bg-[#FF1E7E]",
-    textColor: "text-pink-900",
-    subColor: "text-pink-800/70",
+    bg: "linear-gradient(135deg, #E8EBFB 0%, #D0D5F7 100%)",
+    iconBg: "bg-[#3A49D6]",
+    textColor: "text-indigo-900",
+    subColor: "text-indigo-800/70",
   },
   {
     icon: Swords,
@@ -44,7 +44,7 @@ const AdvisorToolsGrid = () => {
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
         <div className="text-center mb-10 sm:mb-14">
           <div className="lp-eyebrow mb-4 sm:mb-5">
-            <span>LAZYPAY Toolkit</span>
+            <span>F2 Fintech Toolkit</span>
           </div>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[#0A0A0F] mb-3 sm:mb-4 leading-[1.05]">
             Smart tools for{" "}

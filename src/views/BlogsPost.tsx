@@ -119,7 +119,7 @@ const BlogsPost = ({ slug }: Props) => {
         if (listType !== "bullet") { flushList(); listType = "bullet"; }
         listItems.push(
           <li key={`li-${index}`} className="flex gap-3 items-start">
-            <CheckCircle2 className="w-5 h-5 text-[#0B7A8A] flex-shrink-0 mt-0.5" />
+            <CheckCircle2 className="w-5 h-5 text-[#3A49D6] flex-shrink-0 mt-0.5" />
             <span className="text-[15px] sm:text-base leading-[1.8] text-foreground/90">{trimmed.slice(2)}</span>
           </li>
         );
@@ -128,7 +128,7 @@ const BlogsPost = ({ slug }: Props) => {
         const content = trimmed.replace(/^\d+\.\s*/, "");
         listItems.push(
           <li key={`num-${index}`} className="flex gap-3 items-start">
-            <div className="flex-shrink-0 w-6 h-6 rounded-full bg-[#E0F7F9] flex items-center justify-center mt-0.5">
+            <div className="flex-shrink-0 w-6 h-6 rounded-full bg-[#EEF0FF] flex items-center justify-center mt-0.5">
               <span className="text-xs font-bold text-black">{listItems.length + 1}</span>
             </div>
             <span className="text-[15px] sm:text-base leading-[1.8] text-foreground/90">{content}</span>
@@ -179,7 +179,7 @@ const BlogsPost = ({ slug }: Props) => {
 
         <button
           onClick={() => router.push("/blogs")}
-          className="absolute top-4 left-4 sm:top-6 sm:left-6 flex items-center gap-2 text-white hover:text-[#0B7A8A] bg-white/10 backdrop-blur-xl px-3 py-2 sm:px-4 sm:py-2.5 rounded-full border border-white/20 hover:bg-white/20 shadow-lg touch-target transition-all group"
+          className="absolute top-4 left-4 sm:top-6 sm:left-6 flex items-center gap-2 text-white hover:text-[#3A49D6] bg-white/10 backdrop-blur-xl px-3 py-2 sm:px-4 sm:py-2.5 rounded-full border border-white/20 hover:bg-white/20 shadow-lg touch-target transition-all group"
         >
           <ArrowLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" />
           <span className="text-sm font-semibold">All Articles</span>
@@ -187,7 +187,7 @@ const BlogsPost = ({ slug }: Props) => {
 
         <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-8">
           <div className="max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 bg-[#E0F7F9] text-black px-3 py-1.5 rounded-full text-xs sm:text-sm font-bold mb-3 shadow-lg">
+            <div className="inline-flex items-center gap-2 bg-[#EEF0FF] text-black px-3 py-1.5 rounded-full text-xs sm:text-sm font-bold mb-3 shadow-lg">
               {blog.category}
             </div>
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 leading-tight">
@@ -213,7 +213,7 @@ const BlogsPost = ({ slug }: Props) => {
         <div className="flex justify-end mb-8">
           <button
             onClick={handleShare}
-            className="inline-flex items-center gap-2 bg-card hover:bg-muted text-foreground px-4 py-2.5 rounded-full text-sm font-medium border border-border hover:border-[#0B7A8A]/30 transition-all shadow-sm"
+            className="inline-flex items-center gap-2 bg-card hover:bg-muted text-foreground px-4 py-2.5 rounded-full text-sm font-medium border border-border hover:border-[#3A49D6]/30 transition-all shadow-sm"
           >
             <Share2 className="w-4 h-4" />
             Share
@@ -264,7 +264,7 @@ const BlogsPost = ({ slug }: Props) => {
                 <div
                   key={rel.id}
                   onClick={() => router.push(`/blogs/${rel.slug}`)}
-                  className="group bg-card rounded-2xl overflow-hidden border border-border/50 shadow hover:shadow-lg hover:border-[#0B7A8A]/30 hover:-translate-y-0.5 transition-all cursor-pointer"
+                  className="group bg-card rounded-2xl overflow-hidden border border-border/50 shadow hover:shadow-lg hover:border-[#3A49D6]/30 hover:-translate-y-0.5 transition-all cursor-pointer"
                 >
                   <div className="relative h-40 overflow-hidden">
                     <img
@@ -273,15 +273,15 @@ const BlogsPost = ({ slug }: Props) => {
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                    <span className="absolute top-3 left-3 bg-[#E0F7F9] text-black px-2.5 py-0.5 rounded-full text-xs font-bold">
+                    <span className="absolute top-3 left-3 bg-[#EEF0FF] text-black px-2.5 py-0.5 rounded-full text-xs font-bold">
                       {rel.category}
                     </span>
                   </div>
                   <div className="p-4">
-                    <h3 className="font-bold text-sm text-foreground group-hover:text-[#0B7A8A] transition-colors leading-snug line-clamp-2 mb-3">
+                    <h3 className="font-bold text-sm text-foreground group-hover:text-[#3A49D6] transition-colors leading-snug line-clamp-2 mb-3">
                       {rel.title}
                     </h3>
-                    <div className="flex items-center gap-1 text-[#0B7A8A] text-xs font-semibold">
+                    <div className="flex items-center gap-1 text-[#3A49D6] text-xs font-semibold">
                       Read
                       <ArrowRight className="w-3 h-3" />
                     </div>

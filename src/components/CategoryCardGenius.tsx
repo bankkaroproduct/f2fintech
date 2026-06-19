@@ -54,7 +54,7 @@ const categories: CategoryConfig[] = [{
   id: 'shopping',
   name: 'Shopping',
   icon: ShoppingBag,
-  color: 'text-pink-500',
+  color: 'text-indigo-500',
   questions: [{
     field: 'amazon_spends',
     question: 'How much do you spend on Amazon in a month?',
@@ -88,7 +88,7 @@ const categories: CategoryConfig[] = [{
   id: 'bills',
   name: 'Paying Bills',
   icon: CreditCard,
-  color: 'text-[#0B7A8A]',
+  color: 'text-[#3A49D6]',
   questions: [{
     field: 'mobile_phone_bills',
     question: 'How much do you spend on recharging your mobile or Wi-Fi monthly?',
@@ -115,7 +115,7 @@ const categories: CategoryConfig[] = [{
   id: 'fuel',
   name: 'Fuel',
   icon: Fuel,
-  color: 'text-[#0B7A8A]',
+  color: 'text-[#3A49D6]',
   questions: [{
     field: 'fuel',
     question: 'How much do you spend on fuel in a month?',
@@ -128,7 +128,7 @@ const categories: CategoryConfig[] = [{
   id: 'travel',
   name: 'Flight & Hotel',
   icon: Plane,
-  color: 'text-[#0B7A8A]',
+  color: 'text-[#3A49D6]',
   questions: [{
     field: 'flights_annual',
     question: 'How much do you spend on flights in a year?',
@@ -181,7 +181,7 @@ const categories: CategoryConfig[] = [{
   id: 'grocery',
   name: 'Grocery',
   icon: ShoppingCart,
-  color: 'text-[#0B7A8A]',
+  color: 'text-[#3A49D6]',
   questions: [{
     field: 'grocery_spends_online',
     question: 'How much do you spend on groceries (Blinkit, Zepto etc.) every month?',
@@ -490,13 +490,13 @@ useEffect(() => {
       handleViewDetails(card);
     }
   };
-  return <><section className="pt-28 sm:pt-32 pb-12 sm:pb-20 bg-gradient-to-br from-[#f0f9ff] via-[#E0F7F9]/5 to-accent/5">
+  return <><section className="pt-28 sm:pt-32 pb-12 sm:pb-20 bg-[#F8F9FF]">
     <div className="section-shell">
       {/* Header - Always visible */}
       <div className="text-center mb-8 sm:mb-12">
-
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-[#0B7A8A] to-[#E0F7F9] bg-clip-text text-transparent px-4">
-          Find Best Cards by Category
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#EEF0FF] text-[#3A49D6] text-xs font-semibold mb-4"><Sparkles className="w-3.5 h-3.5" />Category Card Genius</div>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 text-slate-900 px-4">
+          Find Best Cards <span className="text-[#3A49D6]">by Category</span>
         </h2>
         <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
           Tell us where you spend, and we'll find the best credit card for you in 30 seconds
@@ -505,8 +505,8 @@ useEffect(() => {
 
       {/* Category Selection - Always visible */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3 sm:gap-4 mb-8 sm:mb-12">
-        {categories.map(category => <button key={category.id} onClick={() => handleCategorySelect(category.id)} className={`p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-card shadow-md hover:shadow-xl transition-all text-center group relative overflow-hidden touch-target ${selectedCategory === category.id ? 'ring-2 ring-primary shadow-glow' : ''}`}>
-          <div className="absolute inset-0 bg-gradient-to-br from-[#f0f9ff] to-[#E0F7F9]/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+        {categories.map(category => <button key={category.id} onClick={() => handleCategorySelect(category.id)} className={`p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-card shadow-md hover:shadow-xl transition-all text-center group relative overflow-hidden touch-target ${selectedCategory === category.id ? 'ring-2 ring-[#3A49D6] shadow-[0_4px_20px_rgba(58,73,214,0.15)]' : ''}`}>
+          <div className="absolute inset-0 bg-gradient-to-br from-[#EEF0FF] to-white opacity-0 group-hover:opacity-100 transition-opacity" />
           <category.icon className={`w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 mx-auto mb-2 sm:mb-3 ${category.color} group-hover:scale-110 transition-transform relative z-10`} />
           <p className="text-xs sm:text-sm font-semibold relative z-10">{category.name}</p>
         </button>)}
@@ -515,7 +515,7 @@ useEffect(() => {
       {/* Results Section */}
       {results && results.length > 0 ? <div ref={resultsRef} className="animate-fade-in scroll-mt-20">
         <div className="text-center mb-8">
-          <div className="inline-flex items-center gap-2 bg-[#E0F7F9] text-[#0B7A8A] px-6 py-3 rounded-full mb-4 border border-[#0B7A8A]">
+          <div className="inline-flex items-center gap-2 bg-[#EEF0FF] text-[#3A49D6] px-6 py-3 rounded-full mb-4 border border-[#3A49D6]">
             <TrendingUp className="w-5 h-5" />
             <span className="font-bold">Your Personalized Results</span>
           </div>
@@ -526,7 +526,7 @@ useEffect(() => {
         </div>
 
         <div className="cards-grid mb-8 sm:mb-12">
-          {results.map((card: any, index: number) => <div key={card.id || index} className="bg-card rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-[#0B7A8A]/20 relative">
+          {results.map((card: any, index: number) => <div key={card.id || index} className="bg-card rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-[#3A49D6]/20 relative">
             {index === 0 && <div className="absolute top-4 right-4 z-10">
               <Badge className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white border-0 px-3 py-1 text-xs font-bold shadow-lg">
                 🏆 Best Match
@@ -543,18 +543,18 @@ useEffect(() => {
               <h3 className="text-xl font-bold mb-4 min-h-[3rem] line-clamp-2">{card.card_name}</h3>
 
               {/* Savings Highlight - Prominent */}
-              <div className="bg-gradient-to-br from-[#E0F7F9]/20 to-[#E0F7F9]/40 dark:from-[#0B7A8A]/20 dark:to-[#0B7A8A]/40 border-2 border-[#0B7A8A] dark:border-[#0B7A8A] rounded-xl p-5 mb-4 shadow-md">
+              <div className="bg-gradient-to-br from-[#EEF0FF]/20 to-[#EEF0FF]/40 dark:from-[#3A49D6]/20 dark:to-[#3A49D6]/40 border-2 border-[#3A49D6] dark:border-[#3A49D6] rounded-xl p-5 mb-4 shadow-md">
                 <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center gap-2">
-                    <TrendingUp className="w-5 h-5 text-[#0B7A8A]" />
-                    <span className="text-sm font-bold text-[#0B7A8A] dark:text-[#0B7A8A]">You'll Save</span>
+                    <TrendingUp className="w-5 h-5 text-[#3A49D6]" />
+                    <span className="text-sm font-bold text-[#3A49D6] dark:text-[#3A49D6]">You'll Save</span>
                   </div>
-                  <Badge variant="outline" className="text-xs text-[#0B7A8A] dark:text-[#0B7A8A] border-[#0B7A8A] dark:border-[#0B7A8A]">Per Year</Badge>
+                  <Badge variant="outline" className="text-xs text-[#3A49D6] dark:text-[#3A49D6] border-[#3A49D6] dark:border-[#3A49D6]">Per Year</Badge>
                 </div>
-                <p className="text-4xl font-black text-[#0B7A8A] dark:text-[#0B7A8A] mb-2">
+                <p className="text-4xl font-black text-[#3A49D6] dark:text-[#3A49D6] mb-2">
                   ₹{Math.round(card.net_savings ?? 0).toLocaleString()}
                 </p>
-                <div className="space-y-1 text-xs text-[#0B7A8A] dark:text-[#0B7A8A] font-medium">
+                <div className="space-y-1 text-xs text-[#3A49D6] dark:text-[#3A49D6] font-medium">
                   {card.total_savings_yearly ? (
                     <p>Base savings: ₹{Math.round(card.total_savings_yearly).toLocaleString()}</p>
                   ) : null}
@@ -630,7 +630,7 @@ useEffect(() => {
                               )}
                             </div>
                             <div className="text-right ml-4">
-                              <span className="text-lg font-bold text-[#0B7A8A] dark:text-[#0B7A8A]">
+                              <span className="text-lg font-bold text-[#3A49D6] dark:text-[#3A49D6]">
                                 +₹{Math.round(savingsValue).toLocaleString()}
                               </span>
                             </div>
@@ -661,7 +661,7 @@ useEffect(() => {
 
                     {/* Airport Lounge Breakdown */}
                     {card.airport_lounge_value > 0 && (
-                      <div className="mt-4 pt-4 border-t-2 border-[#0B7A8A]/30">
+                      <div className="mt-4 pt-4 border-t-2 border-[#3A49D6]/30">
                         <h3 className="text-sm font-bold text-primary mb-3 uppercase tracking-wide">
                           Airport Lounge Benefits
                         </h3>
@@ -682,7 +682,7 @@ useEffect(() => {
                                   </p>
                                 </div>
                                 <div className="text-right ml-4">
-                                  <span className="text-lg font-bold text-[#0B7A8A] dark:text-[#E0F7F9]">
+                                  <span className="text-lg font-bold text-[#3A49D6] dark:text-[#EEF0FF]">
                                     +₹{card.domestic_lounge_value.toLocaleString()}
                                   </span>
                                 </div>
@@ -705,7 +705,7 @@ useEffect(() => {
                                   </p>
                                 </div>
                                 <div className="text-right ml-4">
-                                  <span className="text-lg font-bold text-[#0B7A8A] dark:text-[#E0F7F9]">
+                                  <span className="text-lg font-bold text-[#3A49D6] dark:text-[#EEF0FF]">
                                     +₹{card.international_lounge_value.toLocaleString()}
                                   </span>
                                 </div>
@@ -714,12 +714,12 @@ useEffect(() => {
                           )}
 
                           {card.airport_lounge_value > 0 && (
-                            <div className="bg-gradient-to-r from-[#E0F7F9]/30 to-[#E0F7F9]/50 dark:from-[#0B7A8A]/30 dark:to-[#0B7A8A]/50 rounded-lg p-4 border-2 border-[#E0F7F9] dark:border-[#0B7A8A]">
+                            <div className="bg-gradient-to-r from-[#EEF0FF]/30 to-[#EEF0FF]/50 dark:from-[#3A49D6]/30 dark:to-[#3A49D6]/50 rounded-lg p-4 border-2 border-[#EEF0FF] dark:border-[#3A49D6]">
                               <div className="flex justify-between items-center">
                                 <span className="font-semibold text-foreground">
                                   Total Lounge Value
                                 </span>
-                                <span className="text-xl font-bold text-[#0B7A8A] dark:text-[#E0F7F9]">
+                                <span className="text-xl font-bold text-[#3A49D6] dark:text-[#EEF0FF]">
                                   +₹{card.airport_lounge_value.toLocaleString()}
                                 </span>
                               </div>
@@ -746,16 +746,16 @@ useEffect(() => {
         </div>
       </div> : loading ? (/* Loading State with Fun Facts */
         <div className="max-w-2xl mx-auto text-center animate-fade-in">
-          <div className="bg-card rounded-3xl p-12 shadow-2xl border-2 border-[#0B7A8A]/20">
+          <div className="bg-card rounded-3xl p-12 shadow-2xl border border-slate-100 shadow-[0_8px_40px_rgba(58,73,214,0.08)]">
             <div className="mb-8">
-              <Loader2 className="w-16 h-16 mx-auto text-primary animate-spin" />
+              <div className="relative w-20 h-20 mx-auto mb-5"><div className="absolute inset-0 rounded-full border-4 border-[#EEF0FF]" /><div className="absolute inset-0 rounded-full border-4 border-transparent border-t-[#3A49D6] animate-spin" /><Sparkles className="absolute inset-0 m-auto w-8 h-8 text-[#3A49D6]" /></div>
             </div>
             <h3 className="text-2xl font-bold mb-4">Crunching the numbers...</h3>
             <p className="text-muted-foreground mb-8">
               Our AI is analyzing thousands of card combinations to find your perfect match
             </p>
-            <div className="bg-gradient-to-br from-[#E0F7F9] to-[#E0F7F9]/10 rounded-2xl p-6 min-h-[100px] flex items-center justify-center">
-              <p className="text-lg font-medium text-foreground animate-fade-in">
+            <div className="bg-[#EEF0FF] rounded-2xl p-6 min-h-[100px] flex items-center justify-center">
+              <p className="text-lg text-[#3A49D6] font-medium animate-fade-in">
                 {creditCardFacts[currentFactIndex]}
               </p>
             </div>
@@ -765,15 +765,15 @@ useEffect(() => {
             {/* Progress */}
             <div className="mb-8">
               <div className="flex items-center justify-between mb-3">
-                <span className="text-sm font-semibold text-muted-foreground">
+                <span className="text-sm font-semibold text-[#3A49D6]">
                   Question {currentQuestionIndex + 1} of {selectedCategoryData.questions.length}
                 </span>
-                <span className="text-sm font-bold text-primary">
+                <span className="text-sm font-bold text-slate-500">
                   {Math.round((currentQuestionIndex + 1) / selectedCategoryData.questions.length * 100)}% Complete
                 </span>
               </div>
-              <div className="w-full h-3 bg-muted rounded-full overflow-hidden shadow-inner">
-                <div className="h-full bg-gradient-to-r from-[#0B7A8A] via-[#E0F7F9] to-accent transition-all duration-500 shadow-lg" style={{
+              <div className="w-full h-3 bg-[#EEF0FF] rounded-full overflow-hidden">
+                <div className="h-full bg-gradient-to-r from-[#3A49D6] to-[#6C7BF0] transition-all duration-500" style={{
                   width: `${(currentQuestionIndex + 1) / selectedCategoryData.questions.length * 100}%`
                 }} />
               </div>
@@ -787,10 +787,10 @@ useEffect(() => {
 
             {/* Navigation */}
             <div className="flex gap-4 mt-8">
-              <Button variant="outline" size="lg" onClick={handlePrev} disabled={currentQuestionIndex === 0} className="flex-1">
+              <Button variant="outline" size="lg" onClick={handlePrev} disabled={currentQuestionIndex === 0} className="flex-1 h-12 rounded-xl border-slate-200 hover:border-[#3A49D6]/30 hover:bg-[#EEF0FF]/50 font-semibold">
                 Previous
               </Button>
-              <Button size="lg" onClick={handleNext} disabled={loading} className="flex-1 shadow-lg">
+              <Button size="lg" onClick={handleNext} disabled={loading} className="flex-1 h-12 rounded-xl bg-[#3A49D6] hover:bg-[#2C3CE3] text-white shadow-lg shadow-[#3A49D6]/20 font-semibold">
                 {currentQuestionIndex === selectedCategoryData.questions.length - 1 ? <>
                   Show My Results
                   <Sparkles className="ml-2 w-4 h-4" />
@@ -799,27 +799,27 @@ useEffect(() => {
             </div>
 
             <div className="text-center mt-6">
-              <button onClick={resetCalculator} className="text-muted-foreground hover:text-primary font-medium transition-colors text-sm">
+              <button onClick={resetCalculator} className="text-slate-400 hover:text-[#3A49D6] font-medium transition-colors text-sm">
                 ← Choose Different Category
               </button>
             </div>
           </div>) : (/* Initial State - Instructions */
-        <div className="max-w-2xl mx-auto text-center bg-card rounded-2xl p-8 shadow-lg">
+        <div className="max-w-2xl mx-auto text-center bg-card rounded-2xl p-8 border border-slate-100 shadow-[0_8px_40px_rgba(58,73,214,0.06)]">
           <p className="text-lg text-muted-foreground mb-6">
             💡 <strong>How it works:</strong> Pick a category above, answer quick questions about your spending,
             and instantly see the top 3 cards that'll save you the most money
           </p>
           <div className="flex items-center justify-center gap-8 text-sm text-muted-foreground flex-wrap">
             <div className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-full bg-[#E0F7F9] text-primary font-bold flex items-center justify-center text-lg">1</div>
+              <div className="w-10 h-10 rounded-full bg-[#3A49D6]/10 text-[#3A49D6] font-bold flex items-center justify-center text-lg">1</div>
               <span className="font-medium">Choose Category</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-full bg-[#E0F7F9] text-primary font-bold flex items-center justify-center text-lg">2</div>
+              <div className="w-10 h-10 rounded-full bg-[#3A49D6]/10 text-[#3A49D6] font-bold flex items-center justify-center text-lg">2</div>
               <span className="font-medium">Answer Questions</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-full bg-[#E0F7F9] text-primary font-bold flex items-center justify-center text-lg">3</div>
+              <div className="w-10 h-10 rounded-full bg-[#3A49D6]/10 text-[#3A49D6] font-bold flex items-center justify-center text-lg">3</div>
               <span className="font-medium">Get Top 3 Cards</span>
             </div>
           </div>

@@ -1,7 +1,7 @@
 ﻿"use client";
 import { useState, useEffect, useMemo, useRef } from "react";
 import { createPortal } from "react-dom";
-import { ChevronDown, X, Home as HomeIcon, CreditCard, Sparkles, LayoutGrid, TrendingUp, BookOpen, ArrowUpRight, Youtube, Instagram, Facebook } from "lucide-react";
+import { ChevronDown, X, Home as HomeIcon, CreditCard, Sparkles, LayoutGrid, TrendingUp, BookOpen, ArrowUpRight } from "lucide-react";
 import { Link } from "@/components/Link";
 import NavLink from "@/components/NavLink";
 import { analytics } from "@/services/analytics";
@@ -138,21 +138,18 @@ const MobileMenuOverlay = ({
           className="relative flex flex-col flex-1 min-h-0 bg-white shadow-2xl"
           onClick={handleDialogClick}
         >
-          {/* Header with LAZYPAY wordmark */}
+          {/* Header with brand wordmark */}
           <div className="flex-shrink-0 flex items-center justify-between px-5 pt-5 pb-4 border-b border-slate-100">
             <div className="flex items-center gap-2">
-              <div className="lp-logo-mark" />
-              <span className="font-display text-xl font-extrabold tracking-tight text-[#0A0A0F]">
-                LAZY<span className="text-[#FF1E7E]">PAY</span>
-              </span>
+              <img src="/f2fintech-logo.webp" alt="F2 Fintech" className="h-10 w-auto" />
             </div>
             <button
               ref={firstFocusRef}
-              className="touch-target w-10 h-10 flex items-center justify-center rounded-full bg-pink-50 hover:bg-pink-100 active:bg-pink-100 transition-colors"
+              className="touch-target w-10 h-10 flex items-center justify-center rounded-full bg-blue-50 hover:bg-blue-100 active:bg-blue-100 transition-colors"
               onClick={onClose}
               aria-label="Close menu"
             >
-              <X className="w-5 h-5 text-[#FF1E7E]" strokeWidth={2.5} />
+              <X className="w-5 h-5 text-[#3A49D6]" strokeWidth={2.5} />
             </button>
           </div>
 
@@ -163,13 +160,13 @@ const MobileMenuOverlay = ({
               <Link
                 to="/"
                 className="group flex flex-col items-start justify-between rounded-3xl p-5 h-32 transition-all hover:scale-[1.02] active:scale-[0.98]"
-                style={{ background: "linear-gradient(135deg, #FFE4EF 0%, #FFCEDF 100%)" }}
+                style={{ background: "linear-gradient(135deg, #E8EBFB 0%, #D0D5F7 100%)" }}
                 onClick={onClose}
               >
                 <div className="w-10 h-10 rounded-2xl bg-white/70 backdrop-blur flex items-center justify-center">
-                  <HomeIcon className="w-5 h-5 text-[#FF1E7E]" strokeWidth={2.2} />
+                  <HomeIcon className="w-5 h-5 text-[#3A49D6]" strokeWidth={2.2} />
                 </div>
-                <span className="font-display text-lg font-bold text-pink-950">Home</span>
+                <span className="font-display text-lg font-bold text-indigo-950">Home</span>
               </Link>
 
               <Link
@@ -188,7 +185,7 @@ const MobileMenuOverlay = ({
             {/* Tools Section */}
             <div className="mb-6">
               <div className="flex items-center gap-2 mb-3 px-1">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#FF1E7E]" />
+                <div className="w-1.5 h-1.5 rounded-full bg-[#3A49D6]" />
                 <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-slate-500">
                   AI Tools
                 </p>
@@ -201,7 +198,7 @@ const MobileMenuOverlay = ({
                     'Beat My Card': TrendingUp,
                   };
                   const toolColors: Record<string, { bg: string; icon: string; text: string }> = {
-                    'Super Card Genius': { bg: 'bg-pink-50', icon: 'text-[#FF1E7E]', text: 'text-[#0A0A0F]' },
+                    'Super Card Genius': { bg: 'bg-blue-50', icon: 'text-[#3A49D6]', text: 'text-[#0A0A0F]' },
                     'Category Card Genius': { bg: 'bg-orange-50', icon: 'text-orange-600', text: 'text-[#0A0A0F]' },
                     'Beat My Card': { bg: 'bg-emerald-50', icon: 'text-emerald-700', text: 'text-[#0A0A0F]' },
                   };
@@ -215,7 +212,7 @@ const MobileMenuOverlay = ({
                         <Link
                           key={tool.to}
                           to={tool.to}
-                          className="group flex items-center gap-3 rounded-2xl border border-slate-100 bg-white px-4 py-3.5 hover:border-[#FF1E7E]/30 hover:bg-pink-50/30 transition-all"
+                          className="group flex items-center gap-3 rounded-2xl border border-slate-100 bg-white px-4 py-3.5 hover:border-[#3A49D6]/30 hover:bg-blue-50/30 transition-all"
                           onClick={onClose}
                         >
                           <div className={`w-11 h-11 rounded-xl ${colors.bg} flex items-center justify-center flex-shrink-0`}>
@@ -231,7 +228,7 @@ const MobileMenuOverlay = ({
                               </p>
                             )}
                           </div>
-                          <ArrowUpRight className="w-4 h-4 text-slate-300 group-hover:text-[#FF1E7E] group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all flex-shrink-0" />
+                          <ArrowUpRight className="w-4 h-4 text-slate-300 group-hover:text-[#3A49D6] group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all flex-shrink-0" />
                         </Link>
                       );
                     });
@@ -242,7 +239,7 @@ const MobileMenuOverlay = ({
             {/* Blogs */}
             <Link
               to="/blogs"
-              className="group flex items-center gap-3 rounded-2xl border border-slate-100 bg-white px-4 py-3.5 hover:border-[#FF1E7E]/30 hover:bg-pink-50/30 transition-all mb-6"
+              className="group flex items-center gap-3 rounded-2xl border border-slate-100 bg-white px-4 py-3.5 hover:border-[#3A49D6]/30 hover:bg-blue-50/30 transition-all mb-6"
               onClick={onClose}
             >
               <div className="w-11 h-11 rounded-xl bg-amber-50 flex items-center justify-center flex-shrink-0">
@@ -252,37 +249,9 @@ const MobileMenuOverlay = ({
                 <div className="font-display font-bold text-sm text-[#0A0A0F]">Blogs</div>
                 <p className="text-xs text-slate-500 mt-0.5">Expert tips & guides</p>
               </div>
-              <ArrowUpRight className="w-4 h-4 text-slate-300 group-hover:text-[#FF1E7E] group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all flex-shrink-0" />
+              <ArrowUpRight className="w-4 h-4 text-slate-300 group-hover:text-[#3A49D6] group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all flex-shrink-0" />
             </Link>
 
-            {/* Socials */}
-            <div>
-              <div className="flex items-center gap-2 mb-3 px-1">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#FF1E7E]" />
-                <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-slate-500">
-                  Follow Us
-                </p>
-              </div>
-              <div className="grid grid-cols-3 gap-2">
-                {[
-                  { label: "YouTube", href: "https://www.youtube.com/@lazypayofficial", Icon: Youtube, color: "text-red-600", bg: "bg-red-50" },
-                  { label: "Instagram", href: "https://www.instagram.com/lazypay_official/", Icon: Instagram, color: "text-pink-600", bg: "bg-pink-50" },
-                  { label: "Facebook", href: "https://www.facebook.com/lazypayofficial/", Icon: Facebook, color: "text-blue-600", bg: "bg-blue-50" },
-                ].map((s) => (
-                  <a
-                    key={s.label}
-                    href={s.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`flex flex-col items-center justify-center gap-1.5 rounded-2xl ${s.bg} py-4 transition-all hover:scale-[1.03] active:scale-[0.97]`}
-                    onClick={onClose}
-                  >
-                    <s.Icon className={`w-5 h-5 ${s.color}`} strokeWidth={2.2} />
-                    <span className="text-[11px] font-semibold text-slate-700">{s.label}</span>
-                  </a>
-                ))}
-              </div>
-            </div>
           </div>
 
           {/* Footer CTA */}
@@ -376,13 +345,8 @@ const Navigation = () => {
   >
     <div className="container mx-auto px-6 py-3 lg:py-4 overflow-visible">
       <div className="flex items-center justify-between gap-4">
-        <Link to="/" className="flex items-center gap-2.5 group">
-          <div className="flex items-center gap-1">
-            <div className="lp-logo-mark" />
-            <span className="font-display text-2xl font-extrabold tracking-tight text-[#0A0A0F]">
-              LAZY<span className="text-[#FF1E7E]">PAY</span>
-            </span>
-          </div>
+        <Link to="/" className="flex items-center group">
+          <img src="/f2fintech-logo.webp" alt="F2 Fintech" className="h-16 sm:h-18 w-auto" />
         </Link>
 
         {/* Desktop Navigation */}
@@ -391,8 +355,8 @@ const Navigation = () => {
             <NavLink
               key={link.label}
               to={link.to!}
-              className="px-4 py-2 rounded-full text-slate-700 hover:text-[#FF1E7E] hover:bg-pink-50 transition-all font-medium text-sm"
-              activeClassName="text-[#FF1E7E] bg-pink-50 font-semibold"
+              className="px-4 py-2 rounded-full text-slate-700 hover:text-[#3A49D6] hover:bg-blue-50 transition-all font-medium text-sm"
+              activeClassName="text-[#3A49D6] bg-blue-50 font-semibold"
               onClick={link.action}
             >
               {link.label}
@@ -401,7 +365,7 @@ const Navigation = () => {
 
           {/* Tools Dropdown */}
           <div className="relative group">
-            <button className="px-4 py-2 rounded-full text-slate-700 hover:text-[#FF1E7E] hover:bg-pink-50 transition-all font-medium text-sm flex items-center gap-1">
+            <button className="px-4 py-2 rounded-full text-slate-700 hover:text-[#3A49D6] hover:bg-blue-50 transition-all font-medium text-sm flex items-center gap-1">
               Tools
               <ChevronDown className="w-4 h-4" />
             </button>
@@ -411,10 +375,10 @@ const Navigation = () => {
                 <Link
                   key={tool.to}
                   to={tool.to!}
-                  className="block px-5 py-3 hover:bg-pink-50 transition-colors group/item"
+                  className="block px-5 py-3 hover:bg-blue-50 transition-colors group/item"
                   onClick={tool.action}
                 >
-                  <div className="font-semibold text-slate-900 group-hover/item:text-[#FF1E7E] transition-colors">{tool.label}</div>
+                  <div className="font-semibold text-slate-900 group-hover/item:text-[#3A49D6] transition-colors">{tool.label}</div>
                   <div className="text-xs text-slate-500 mt-0.5">{tool.description}</div>
                 </Link>
               ))}
@@ -423,8 +387,8 @@ const Navigation = () => {
 
           <NavLink
             to="/blogs"
-            className="px-4 py-2 rounded-full text-slate-700 hover:text-[#FF1E7E] hover:bg-pink-50 transition-all font-medium text-sm"
-            activeClassName="text-[#FF1E7E] bg-pink-50 font-semibold"
+            className="px-4 py-2 rounded-full text-slate-700 hover:text-[#3A49D6] hover:bg-blue-50 transition-all font-medium text-sm"
+            activeClassName="text-[#3A49D6] bg-blue-50 font-semibold"
           >
             Blogs
           </NavLink>
@@ -442,14 +406,14 @@ const Navigation = () => {
         <div className="flex items-center gap-2 lg:hidden">
           <button
             ref={menuTriggerRef}
-            className="p-2.5 rounded-xl bg-pink-50 hover:bg-pink-100 active:bg-pink-100 border border-pink-200 transition-all touch-target"
+            className="p-2.5 rounded-xl bg-blue-50 hover:bg-blue-100 active:bg-blue-100 border border-blue-200 transition-all touch-target"
             onClick={() => setIsMobileMenuOpen(true)}
             aria-label="Open navigation menu"
           >
             <div className="relative w-5 h-5 flex flex-col items-center justify-center gap-1">
-              <span className="block w-5 h-0.5 bg-[#FF1E7E] rounded-full"></span>
-              <span className="block w-5 h-0.5 bg-[#FF1E7E] rounded-full"></span>
-              <span className="block w-5 h-0.5 bg-[#FF1E7E] rounded-full"></span>
+              <span className="block w-5 h-0.5 bg-[#3A49D6] rounded-full"></span>
+              <span className="block w-5 h-0.5 bg-[#3A49D6] rounded-full"></span>
+              <span className="block w-5 h-0.5 bg-[#3A49D6] rounded-full"></span>
             </div>
           </button>
         </div>

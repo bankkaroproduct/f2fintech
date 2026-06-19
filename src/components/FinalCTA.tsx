@@ -13,7 +13,7 @@ const FinalCTA = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           {/* Icon */}
-          <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-[#E0F7F9] mb-8">
+          <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-[#EEF0FF] mb-8">
             <TrendingUp className="w-10 h-10 text-primary" />
           </div>
 
@@ -74,7 +74,7 @@ const FinalCTA = () => {
 
           {/* Trust Badge */}
           <div className="mt-12 flex items-center justify-center gap-2 text-sm text-muted-foreground">
-            <svg className="w-5 h-5 text-[#0B7A8A]" fill="currentColor" viewBox="0 0 20 20">
+            <svg className="w-5 h-5 text-[#3A49D6]" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
             </svg>
             <span>100% Safe & Secure | No Hidden Charges | Instant Eligibility Check</span>

@@ -14,7 +14,7 @@ export const OnboardingOverlay = ({ onClose, onContinue }: OnboardingOverlayProp
       
       {/* Highlighted Pro Tip area - positioned where the actual Pro Tip is */}
       <div className="absolute top-[180px] left-1/2 -translate-x-1/2 w-full max-w-7xl px-4">
-        <div className="relative bg-[#E0F7F9] border-2 border-primary rounded-lg p-3 shadow-2xl">
+        <div className="relative bg-[#EEF0FF] border-2 border-primary rounded-lg p-3 shadow-2xl">
           {/* Arrow pointing to button */}
           <div className="absolute -bottom-16 right-8 flex flex-col items-center gap-2 animate-bounce">
             <svg 

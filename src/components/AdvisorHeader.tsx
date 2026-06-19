@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Link } from "@/components/Link";
 
-const NIRAJ_BRAND = "#0B7A8A";
+const NIRAJ_BRAND = "#3A49D6";
 
 interface AdvisorHeaderProps {
   name: string;
@@ -33,19 +33,19 @@ const AdvisorHeader = ({ name, photoSrc }: AdvisorHeaderProps) => {
         <nav className="hidden md:flex items-center gap-8">
           <Link
             to="/"
-            className="text-[15px] font-medium text-foreground hover:text-[#0B7A8A] transition-colors"
+            className="text-[15px] font-medium text-foreground hover:text-[#3A49D6] transition-colors"
           >
             Home
           </Link>
           <Link
             to="/cards"
-            className="text-[15px] font-medium text-foreground hover:text-[#0B7A8A] transition-colors"
+            className="text-[15px] font-medium text-foreground hover:text-[#3A49D6] transition-colors"
           >
             Discover
           </Link>
 
           <div className="relative group">
-            <button className="text-[15px] font-medium text-foreground hover:text-[#0B7A8A] transition-colors flex items-center gap-1">
+            <button className="text-[15px] font-medium text-foreground hover:text-[#3A49D6] transition-colors flex items-center gap-1">
               Tools <ChevronDown className="h-4 w-4" />
             </button>
             <div className="absolute left-0 mt-0 w-56 bg-background border border-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
@@ -72,7 +72,7 @@ const AdvisorHeader = ({ name, photoSrc }: AdvisorHeaderProps) => {
 
           <Link
             to="/blogs"
-            className="text-[15px] font-medium text-foreground hover:text-[#0B7A8A] transition-colors"
+            className="text-[15px] font-medium text-foreground hover:text-[#3A49D6] transition-colors"
           >
             Blogs
           </Link>

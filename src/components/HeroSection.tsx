@@ -15,8 +15,8 @@ const HeroSection = () => {
       <div className="absolute inset-0 lp-grid-bg opacity-50 pointer-events-none" />
 
       {/* Decorative orbs */}
-      <div className="absolute top-20 right-10 w-72 h-72 rounded-full bg-gradient-to-br from-pink-400/30 to-purple-500/20 blur-3xl pointer-events-none" />
-      <div className="absolute bottom-20 left-10 w-96 h-96 rounded-full bg-gradient-to-tr from-pink-500/20 to-rose-300/20 blur-3xl pointer-events-none" />
+      <div className="absolute top-20 right-10 w-72 h-72 rounded-full bg-gradient-to-br from-blue-400/30 to-indigo-500/20 blur-3xl pointer-events-none" />
+      <div className="absolute bottom-20 left-10 w-96 h-96 rounded-full bg-gradient-to-tr from-indigo-500/20 to-blue-300/20 blur-3xl pointer-events-none" />
 
       <div className="section-shell relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex flex-col items-center text-center max-w-5xl mx-auto">
@@ -27,9 +27,9 @@ const HeroSection = () => {
 
           {/* Main headline */}
           <h1 className="font-display lp-fade-up lp-fade-up-delay-1 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-[#0A0A0F] leading-[0.95] tracking-tight mb-6">
-            Pay smarter.
+            Cards that
             <br />
-            <span className="lp-gradient-text">Live lazier.</span>
+            <span className="lp-gradient-text">work for you.</span>
           </h1>
 
           {/* Subheadline */}
@@ -59,7 +59,7 @@ const HeroSection = () => {
               }}
               className="lp-btn-ghost inline-flex items-center gap-2 text-base"
             >
-              <Sparkles className="w-5 h-5 text-[#FF1E7E]" />
+              <Sparkles className="w-5 h-5 text-[#3A49D6]" />
               Try AI Genius
             </button>
           </div>
@@ -67,17 +67,17 @@ const HeroSection = () => {
           {/* Trust indicators */}
           <div className="lp-fade-up lp-fade-up-delay-4 flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-sm text-slate-500">
             <div className="flex items-center gap-2">
-              <ShieldCheck className="w-5 h-5 text-[#FF1E7E]" />
+              <ShieldCheck className="w-5 h-5 text-[#3A49D6]" />
               <span className="font-medium">Bank-grade security</span>
             </div>
             <div className="w-px h-4 bg-slate-300 hidden sm:block" />
             <div className="flex items-center gap-2">
-              <Zap className="w-5 h-5 text-[#FF1E7E]" />
+              <Zap className="w-5 h-5 text-[#3A49D6]" />
               <span className="font-medium">60-second recommendations</span>
             </div>
             <div className="w-px h-4 bg-slate-300 hidden sm:block" />
             <div className="flex items-center gap-2">
-              <Sparkles className="w-5 h-5 text-[#FF1E7E]" />
+              <Sparkles className="w-5 h-5 text-[#3A49D6]" />
               <span className="font-medium">100+ cards analyzed</span>
             </div>
           </div>

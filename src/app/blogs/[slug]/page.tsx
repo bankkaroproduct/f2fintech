@@ -16,14 +16,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const blog = blogs.find((b) => b.slug === slug);
 
   if (!blog) {
-    return { title: "Article Not Found | BankKaro" };
+    return { title: "Article Not Found | F2 Fintech" };
   }
 
   return {
-    title: `${blog.title} | BankKaro Blog`,
+    title: `${blog.title} | F2 Fintech Blog`,
     description: blog.excerpt,
     robots: 'noindex, follow',
-    alternates: { canonical: `https://great.cards/blogs/${slug}` },
+    alternates: { canonical: `https://f2fintech.com/blogs/${slug}` },
     openGraph: {
       title: blog.title,
       description: blog.excerpt,

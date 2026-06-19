@@ -18,23 +18,23 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 10%;
     
-    /* LAZYPAY Pink - Primary Brand */
-    --mc-green-50: 330 100% 97%;
-    --mc-green-100: 330 100% 95%;
-    --mc-green-200: 330 100% 90%;
-    --mc-green-500: 330 100% 50%;
-    --mc-green-600: 330 100% 45%;
-    --mc-green-700: 330 100% 38%;
-    --mc-green-900: 330 100% 20%;
+    /* F2 Fintech Blue - Primary Brand */
+    --mc-green-50: 234 66% 97%;
+    --mc-green-100: 234 66% 95%;
+    --mc-green-200: 234 66% 90%;
+    --mc-green-500: 234 66% 53%;
+    --mc-green-600: 234 66% 45%;
+    --mc-green-700: 234 66% 38%;
+    --mc-green-900: 234 66% 20%;
 
-    /* Primary (LAZYPAY Pink #FF1E7E) */
-    --primary: 330 100% 45%;
+    /* Primary (F2 Fintech Blue #3A49D6) */
+    --primary: 234 66% 53%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 330 100% 60%;
+    --primary-glow: 234 66% 63%;
 
     /* Secondary */
-    --secondary: 330 50% 96%;
-    --secondary-foreground: 330 100% 30%;
+    --secondary: 213 100% 97%;
+    --secondary-foreground: 234 66% 30%;
     
     /* Charcoal - Text Colors */
     --charcoal-50: 210 40% 98%;
@@ -641,8 +641,8 @@ All colors MUST be HSL.
     .cg-prev-btn {
       margin-bottom: 16px;
       border-width: 1px;
-      border-color: #FF1E7E;
-      color: #FF1E7E;
+      border-color: #3A49D6;
+      color: #3A49D6;
       background-color: transparent;
     }
 
@@ -672,13 +672,13 @@ All colors MUST be HSL.
 
     .cg-next-btn {
       margin-top: 20px;
-      background-color: #FF1E7E;
+      background-color: #3A49D6;
       color: #ffffff;
-      border-color: #FF1E7E;
+      border-color: #3A49D6;
     }
 
     .cg-next-btn:hover {
-      background-color: #E0156B;
+      background-color: #2C3CE3;
     }
 
     .cg-next-btn:active {
@@ -806,23 +806,23 @@ All colors MUST be HSL.
 }
 
 /* ============================================
-   LAZYPAY Brand Color Variables
-   Primary: #FF1E7E  →  HSL 330 100% 45%
-   Secondary: #F5F5F5 →  HSL 0 0% 96.1%
-   Accent: #FFFFFF   →  HSL 0 0% 100%
+   F2 Fintech Brand Color Variables
+   Primary: #3A49D6  →  HSL 234 66% 53%
+   Secondary: #F4FAFF →  HSL 213 100% 97%
+   Accent: #38BDF8   →  HSL 198 93% 60%
    ============================================ */
 :root {
-  --lazypay-primary: 330 100% 45%;
-  --lazypay-primary-light: 330 100% 55%;
-  --lazypay-primary-dark: 330 100% 35%;
-  --lazypay-secondary: 0 0% 96.1%;
-  --lazypay-accent: 0 0% 100%;
+  --lazypay-primary: 234 66% 53%;
+  --lazypay-primary-light: 234 66% 63%;
+  --lazypay-primary-dark: 234 66% 43%;
+  --lazypay-secondary: 213 100% 97%;
+  --lazypay-accent: 198 93% 60%;
   --lazypay-ink: 224 71% 4%;
-  --lazypay-cream: 30 50% 98%;
+  --lazypay-cream: 213 100% 97%;
 }
 
 /* ============================================
-   LAZYPAY Stripe-Inspired Design System
+   F2 Fintech Design System
    ============================================ */
 .font-display {
   font-family: var(--font-display), system-ui, sans-serif;
@@ -836,17 +836,17 @@ All colors MUST be HSL.
 /* Hero gradient mesh */
 .lp-mesh-bg {
   background:
-    radial-gradient(at 20% 20%, hsla(330, 100%, 70%, 0.15) 0px, transparent 50%),
-    radial-gradient(at 80% 10%, hsla(280, 100%, 70%, 0.1) 0px, transparent 50%),
-    radial-gradient(at 70% 80%, hsla(330, 100%, 60%, 0.12) 0px, transparent 50%),
-    radial-gradient(at 10% 90%, hsla(340, 100%, 80%, 0.1) 0px, transparent 50%),
-    linear-gradient(180deg, #ffffff 0%, #fff5fa 100%);
+    radial-gradient(at 20% 20%, hsla(234, 66%, 70%, 0.15) 0px, transparent 50%),
+    radial-gradient(at 80% 10%, hsla(198, 93%, 70%, 0.1) 0px, transparent 50%),
+    radial-gradient(at 70% 80%, hsla(234, 66%, 60%, 0.12) 0px, transparent 50%),
+    radial-gradient(at 10% 90%, hsla(213, 100%, 80%, 0.1) 0px, transparent 50%),
+    linear-gradient(180deg, #ffffff 0%, #F4FAFF 100%);
 }
 
 .lp-grid-bg {
   background-image:
-    linear-gradient(rgba(255, 30, 126, 0.09) 0.5px, transparent 0.5px),
-    linear-gradient(90deg, rgba(255, 30, 126, 0.09) 0.5px, transparent 0.5px);
+    linear-gradient(rgba(58, 73, 214, 0.09) 0.5px, transparent 0.5px),
+    linear-gradient(90deg, rgba(58, 73, 214, 0.09) 0.5px, transparent 0.5px);
   background-size: 64px 64px;
   background-position: -1px -1px;
   -webkit-mask-image: radial-gradient(ellipse 55% 50% at 50% 45%, #000 0%, rgba(0,0,0,0.65) 45%, transparent 90%);
@@ -856,8 +856,8 @@ All colors MUST be HSL.
 .lp-dark-bg {
   background: #0A0A0F;
   background-image:
-    radial-gradient(at 30% 20%, hsla(330, 100%, 50%, 0.2) 0px, transparent 50%),
-    radial-gradient(at 70% 80%, hsla(280, 100%, 50%, 0.15) 0px, transparent 50%);
+    radial-gradient(at 30% 20%, hsla(234, 66%, 50%, 0.2) 0px, transparent 50%),
+    radial-gradient(at 70% 80%, hsla(198, 93%, 50%, 0.15) 0px, transparent 50%);
 }
 
 .lp-noise {
@@ -876,7 +876,7 @@ All colors MUST be HSL.
 
 /* Gradient text */
 .lp-gradient-text {
-  background: linear-gradient(135deg, #FF1E7E 0%, #FF6B9D 50%, #C71585 100%);
+  background: linear-gradient(135deg, #3A49D6 0%, #4361EE 50%, #38BDF8 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -884,7 +884,7 @@ All colors MUST be HSL.
 }
 
 .lp-gradient-text-dark {
-  background: linear-gradient(135deg, #1a1a2e 0%, #FF1E7E 100%);
+  background: linear-gradient(135deg, #1a1a2e 0%, #3A49D6 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -892,14 +892,14 @@ All colors MUST be HSL.
 
 /* Premium button styles */
 .lp-btn-primary {
-  background: linear-gradient(135deg, #FF1E7E 0%, #E0156B 100%);
+  background: linear-gradient(135deg, #3A49D6 0%, #2C3CE3 100%);
   color: white;
   font-weight: 600;
   border-radius: 9999px;
   padding: 14px 28px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow:
-    0 4px 14px 0 rgba(255, 30, 126, 0.35),
+    0 4px 14px 0 rgba(58, 73, 214, 0.35),
     inset 0 1px 0 rgba(255, 255, 255, 0.2);
   position: relative;
   overflow: hidden;
@@ -919,7 +919,7 @@ All colors MUST be HSL.
 .lp-btn-primary:hover {
   transform: translateY(-2px);
   box-shadow:
-    0 8px 24px 0 rgba(255, 30, 126, 0.45),
+    0 8px 24px 0 rgba(58, 73, 214, 0.45),
     inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
@@ -929,7 +929,7 @@ All colors MUST be HSL.
 
 .lp-btn-ghost {
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 30, 126, 0.2);
+  border: 1px solid rgba(58, 73, 214, 0.2);
   color: #1a1a2e;
   font-weight: 600;
   border-radius: 9999px;
@@ -939,8 +939,8 @@ All colors MUST be HSL.
 }
 
 .lp-btn-ghost:hover {
-  background: rgba(255, 30, 126, 0.05);
-  border-color: rgba(255, 30, 126, 0.5);
+  background: rgba(58, 73, 214, 0.05);
+  border-color: rgba(58, 73, 214, 0.5);
 }
 
 /* Card hover effects */
@@ -953,20 +953,20 @@ All colors MUST be HSL.
 
 .lp-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(255, 30, 126, 0.2);
+  border-color: rgba(58, 73, 214, 0.2);
   box-shadow:
-    0 20px 40px -10px rgba(255, 30, 126, 0.15),
+    0 20px 40px -10px rgba(58, 73, 214, 0.15),
     0 8px 16px -8px rgba(0, 0, 0, 0.08);
 }
 
-/* Logo mark - triangle from LAZYPAY logo */
+/* Logo mark - F2 Fintech brand mark */
 .lp-logo-mark {
   display: inline-block;
   width: 0;
   height: 0;
   border-style: solid;
   border-width: 12px 0 12px 20px;
-  border-color: transparent transparent transparent #FF1E7E;
+  border-color: transparent transparent transparent #3A49D6;
   filter: drop-shadow(0 0 8px rgba(255, 30, 126, 0.4));
 }
 
@@ -1020,7 +1020,7 @@ All colors MUST be HSL.
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #FF1E7E;
+  color: #3A49D6;
   background: rgba(255, 30, 126, 0.08);
   padding: 6px 14px;
   border-radius: 9999px;
@@ -1031,7 +1031,7 @@ All colors MUST be HSL.
   content: '';
   width: 6px;
   height: 6px;
-  background: #FF1E7E;
+  background: #3A49D6;
   border-radius: 50%;
   box-shadow: 0 0 10px rgba(255, 30, 126, 0.8);
   animation: lp-pulse-dot 2s ease-in-out infinite;
@@ -1167,7 +1167,7 @@ All colors MUST be HSL.
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #FF1E7E;
+  background: #3A49D6;
   transform: translate(-50%, -50%);
   box-shadow: 0 0 16px rgba(255, 30, 126, 0.6);
 }

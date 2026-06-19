@@ -134,7 +134,7 @@ const BlogPost = () => {
         listItems.push(
           <li key={`li-${index}`} className="flex gap-3 items-start group">
             <div className="flex-shrink-0 mt-1">
-              <CheckCircle2 className="w-5 h-5 text-[#0B7A8A]" />
+              <CheckCircle2 className="w-5 h-5 text-[#3A49D6]" />
             </div>
             <span className="text-[15px] sm:text-base leading-[1.8] text-foreground/90">
               {trimmed.slice(2)}
@@ -151,7 +151,7 @@ const BlogPost = () => {
         const content = trimmed.replace(/^\d+\.\s*/, '');
         listItems.push(
           <li key={`num-${index}`} className="flex gap-3 items-start group">
-            <div className="flex-shrink-0 w-6 h-6 rounded-full bg-[#E0F7F9] flex items-center justify-center mt-0.5">
+            <div className="flex-shrink-0 w-6 h-6 rounded-full bg-[#EEF0FF] flex items-center justify-center mt-0.5">
               <span className="text-xs font-bold text-black">{listItems.length + 1}</span>
             </div>
             <span className="text-[15px] sm:text-base leading-[1.8] text-foreground/90">
@@ -206,7 +206,7 @@ const BlogPost = () => {
         {/* Floating Back Button - Glassmorphic */}
         <button
           onClick={() => router.push('/')}
-          className="absolute top-4 left-4 sm:top-6 sm:left-6 flex items-center gap-2 text-white hover:text-[#0B7A8A] transition-all bg-white/10 backdrop-blur-xl px-3 py-2 sm:px-4 sm:py-2.5 rounded-full border border-white/20 hover:bg-white/20 shadow-lg touch-target group"
+          className="absolute top-4 left-4 sm:top-6 sm:left-6 flex items-center gap-2 text-white hover:text-[#3A49D6] transition-all bg-white/10 backdrop-blur-xl px-3 py-2 sm:px-4 sm:py-2.5 rounded-full border border-white/20 hover:bg-white/20 shadow-lg touch-target group"
         >
           <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5 group-hover:-translate-x-0.5 transition-transform" />
           <span className="text-sm sm:text-base font-semibold">Back</span>
@@ -216,7 +216,7 @@ const BlogPost = () => {
         <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-8">
           <div className="max-w-4xl mx-auto">
             {/* Category Badge */}
-            <div className="inline-flex items-center gap-2 bg-[#E0F7F9] text-black px-3 py-1.5 rounded-full text-xs sm:text-sm font-bold mb-3 sm:mb-4 shadow-lg">
+            <div className="inline-flex items-center gap-2 bg-[#EEF0FF] text-black px-3 py-1.5 rounded-full text-xs sm:text-sm font-bold mb-3 sm:mb-4 shadow-lg">
               {blog.category}
             </div>
 
@@ -247,7 +247,7 @@ const BlogPost = () => {
         <div className="flex justify-end mb-8">
           <button
             onClick={handleShare}
-            className="inline-flex items-center gap-2 bg-card hover:bg-muted text-foreground px-4 py-2.5 rounded-full text-sm font-medium border border-border hover:border-[#0B7A8A]/30 transition-all shadow-sm hover:shadow-md touch-target"
+            className="inline-flex items-center gap-2 bg-card hover:bg-muted text-foreground px-4 py-2.5 rounded-full text-sm font-medium border border-border hover:border-[#3A49D6]/30 transition-all shadow-sm hover:shadow-md touch-target"
           >
             <Share2 className="w-4 h-4" />
             <span>Share</span>

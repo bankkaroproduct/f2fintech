@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Bricolage_Grotesque, Plus_Jakarta_Sans, Playfair_Display } from "next/font/google";
+import { Outfit, Poppins, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/Providers";
 import { Analytics } from "@/components/Analytics";
@@ -7,15 +7,15 @@ import { brandConfig } from "@/config/brand.config";
 import { BrandStyles } from "@/components/BrandStyles";
 import { SEOTags } from "@/components/SEOTags";
 
-const bricolage = Bricolage_Grotesque({
+const outfit = Outfit({
     subsets: ["latin"],
     variable: "--font-display",
     weight: ["300", "400", "500", "600", "700", "800"],
 });
-const jakarta = Plus_Jakarta_Sans({
+const poppins = Poppins({
     subsets: ["latin"],
     variable: "--font-body",
-    weight: ["300", "400", "500", "600", "700", "800"],
+    weight: ["300", "400", "500", "600", "700"],
 });
 const playfair = Playfair_Display({
     subsets: ["latin"],
@@ -43,7 +43,7 @@ export default function RootLayout({
             <head>
                 <BrandStyles />
             </head>
-            <body className={`${jakarta.className} ${bricolage.variable} ${jakarta.variable} ${playfair.variable}`}>
+            <body className={`${poppins.className} ${outfit.variable} ${poppins.variable} ${playfair.variable}`}>
                 <SEOTags />
                 <Analytics />
                 <Providers>{children}</Providers>
