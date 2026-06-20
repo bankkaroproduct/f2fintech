@@ -1183,7 +1183,7 @@ const CardListing = () => {
                         return !saving && isJoiningFree && isAnnualFree && <Badge className="absolute bottom-3 right-3 bg-[#F5F5F5] text-black z-10">LTF</Badge>;
                       })()}
 
-                      <img src={card.card_bg_image || card.image || '/placeholder.svg'} alt={card.name} className="w-full h-full object-contain scale-110" onError={e => {
+                      <img src={card.card_bg_image || card.image || '/placeholder.svg'} alt={card.name} className="w-full h-full object-contain" onError={e => {
                         e.currentTarget.src = '/placeholder.svg';
                       }} />
                     </div>
