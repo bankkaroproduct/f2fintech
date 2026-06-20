@@ -1157,7 +1157,7 @@ const CardListing = () => {
                         const cardKey = getCardKey(card);
                         const saving = categorySavings[String(card.id)] ?? categorySavings[cardKey];
                         return saving !== undefined && saving !== null;
-                      })() && !((card.joining_fee_text === "0" || card.joining_fee_text?.toLowerCase?.() === "free") && (card.annual_fee_text === "0" || card.annual_fee_text?.toLowerCase?.() === "free")) && (() => {
+                      })() && !((card.annual_fee_text == '0' || card.annual_fee_text == 0) && (card.joining_fees == '0' || card.joining_fees == 0 || card.joining_fee_text == '0' || card.joining_fee_text == 0)) && (() => {
                         const alias = getCardAlias(card) || card.seo_card_alias || card.card_alias;
                         return alias && eligibleCardAliases.includes(String(alias));
                       })() && (
@@ -1178,9 +1178,9 @@ const CardListing = () => {
                         const categorySavings = cardSavings[filters.category] || {};
                         const cardKey = getCardKey(card);
                         const saving = categorySavings[String(card.id)] ?? categorySavings[cardKey];
-                        const isJoiningFree = card.joining_fee_text === "0" || card.joining_fee_text?.toLowerCase?.() === "free";
-                        const isAnnualFree = card.annual_fee_text === "0" || card.annual_fee_text?.toLowerCase?.() === "free";
-                        return !saving && isJoiningFree && isAnnualFree && <Badge className="absolute bottom-3 right-3 bg-[#F5F5F5] text-black z-10">LTF</Badge>;
+                        const isAnnualFree = card.annual_fee_text == '0' || card.annual_fee_text == 0;
+                        const isJoiningFree = card.joining_fees == '0' || card.joining_fees == 0 || card.joining_fee_text == '0' || card.joining_fee_text == 0;
+                        return !saving && isAnnualFree && isJoiningFree && <Badge className="absolute bottom-3 right-3 bg-[#F5F5F5] text-black z-10">LTF</Badge>;
                       })()}
 
                       <img src={card.card_bg_image || card.image || '/placeholder.svg'} alt={card.name} className="w-full h-full object-contain" onError={e => {
