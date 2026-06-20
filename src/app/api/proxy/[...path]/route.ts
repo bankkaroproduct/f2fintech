@@ -9,6 +9,7 @@ const BK_API_BASE = 'https://bk-api.bankkaro.com/sp/api';
 // Paths (relative to /api/proxy/) that should be routed to bk-api instead of the partner API.
 const BK_API_ROUTE_MAP: Record<string, string> = {
   'cg-eligiblity': 'cg-eligiblity',
+  'cardgenius/cards': 'cards',
 };
 
 async function proxyRequest(
