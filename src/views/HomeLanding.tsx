@@ -183,7 +183,7 @@ const CURATED_ALIASES: Record<TabKey, string[]> = {
 };
 
 const TAB_CONFIG: Record<TabKey, { label: string; slug: string; free_cards: string; sort_by: string }> = {
-  picks:    { label: "F2 Picks",       slug: "",                          free_cards: "",     sort_by: "priority" },
+  picks:    { label: "Picks by F2 Fintech", slug: "",                     free_cards: "",     sort_by: "priority" },
   best:     { label: "Best Cards",     slug: "best-travel-credit-card",   free_cards: "",     sort_by: "priority" },
   beginner: { label: "Beginner",       slug: "",                          free_cards: "true", sort_by: "priority" },
   cashback: { label: "Best Cashback",  slug: "best-shopping-credit-card", free_cards: "",     sort_by: "priority" },
