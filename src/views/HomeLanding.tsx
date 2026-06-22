@@ -362,8 +362,7 @@ const HomeLanding = () => {
             </h1>
 
             <p className="text-base sm:text-lg lg:text-xl text-slate-500 leading-relaxed max-w-2xl mx-auto mb-9 sm:mb-11">
-              AI-powered recommendations across 130+ credit cards.
-              No bias, no spam — just the right card for how you spend.
+              Stop guessing, start earning. We analyze 130+ cards against your real spending to find your perfect match.
             </p>
 
             {/* Search */}
